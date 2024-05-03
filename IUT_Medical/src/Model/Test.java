@@ -9,7 +9,7 @@ public class Test implements Model{
     public int price;
     public Boolean Availablity;
 
-    public Test(int ID, String name, int price, Boolean Availablity) {
+    public Test(String name, int price, Boolean Availablity) {
         this.ID = ID;
         this.name = name;
         this.price = price;
@@ -22,7 +22,7 @@ public class Test implements Model{
     }
 
     public void save() {
-        String Query = "INSERT INTO TEST VALUES (" + this.ID + ", '" + this.name + "', " + this.price + ", " + this.Availablity + ")";
+        String Query = "INSERT INTO TEST(Name, Price, Availability) VALUES ('" + this.name + "', " + this.price + ", " + this.Availablity + ")";
         try {
             DB.Conn.Execute(Query);
         } catch (Exception e) {
@@ -70,7 +70,7 @@ public class Test implements Model{
         try {
             java.sql.ResultSet result = DB.Conn.Exedute(Query);
             while (result.next()) {
-                Test test = new Test(result.getInt("ID"), result.getString("NAME"), result.getInt("PRICE"), result.getBoolean("AVAILABLITY"));
+                Test test = new Test(result.getInt("ID"));
                 tests.add(test);
             }
         } catch (Exception e) {

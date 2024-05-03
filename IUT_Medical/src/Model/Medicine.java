@@ -10,8 +10,7 @@ public class Medicine implements Model {
     public String company;
     public int quantity;
 
-    public Medicine(int ID, String name, String generic, String company, int quantity) {
-        this.ID = ID;
+    public Medicine(String name, String generic, String company, int quantity) {
         this.name = name;
         this.generic = generic;
         this.company = company;
@@ -24,7 +23,7 @@ public class Medicine implements Model {
     }
 
     public void save() {
-        String Query = "INSERT INTO MEDICINE VALUES (" + this.ID + ", '" + this.name + "', '" + this.generic + "', '" + this.company + "', " + this.quantity + ")";
+        String Query = "INSERT INTO MEDICINE(Name, Generic, Company, Quantity) VALUES ('" + this.name + "', '" + this.generic + "', '" + this.company + "', " + this.quantity + ")";
         try {
             DB.Conn.Execute(Query);
         } catch (Exception e) {
@@ -73,7 +72,7 @@ public class Medicine implements Model {
         try {
             java.sql.ResultSet result = DB.Conn.Exedute(Query);
             while (result.next()) {
-                Medicine medicine = new Medicine(result.getInt("ID"), result.getString("NAME"), result.getString("GENERIC"), result.getString("COMPANY"), result.getInt("QUANTITY"));
+                Medicine medicine = new Medicine(result.getInt("ID"));
                 Medicines.add(medicine);
             }
         } catch (Exception e) {
