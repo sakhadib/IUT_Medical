@@ -1,5 +1,8 @@
 package Model;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class Medicine implements Model {
     public int ID;
     public String name;
@@ -62,5 +65,20 @@ public class Medicine implements Model {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static List<Model> All(){
+        List<Model> Medicines = new ArrayList<Model>();
+        String Query = "SELECT * FROM MEDICINE";
+        try {
+            java.sql.ResultSet result = DB.Conn.Exedute(Query);
+            while (result.next()) {
+                Medicine medicine = new Medicine(result.getInt("ID"), result.getString("NAME"), result.getString("GENERIC"), result.getString("COMPANY"), result.getInt("QUANTITY"));
+                Medicines.add(medicine);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return Medicines;
     }
 }

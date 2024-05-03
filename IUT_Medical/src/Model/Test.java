@@ -1,27 +1,28 @@
 package Model;
+
 import java.util.List;
 import java.util.ArrayList;
 
-public class Student implements Model{
-    public String ID;
+public class Test implements Model{
+    public int ID;
     public String name;
-    public String email;
-    public String Dept;
+    public int price;
+    public Boolean Availablity;
 
-    public Student(String ID, String name, String email, String Dept) {
+    public Test(int ID, String name, int price, Boolean Availablity) {
         this.ID = ID;
         this.name = name;
-        this.email = email;
-        this.Dept = Dept;
+        this.price = price;
+        this.Availablity = Availablity;
     }
 
-    public Student(String ID) {
+    public Test(int ID) {
         this.ID = ID;
         select();
     }
 
     public void save() {
-        String Query = "INSERT INTO STUDENT VALUES ('" + this.ID + "', '" + this.name + "', '" + this.Dept + "', '" + this.email + "')";
+        String Query = "INSERT INTO TEST VALUES (" + this.ID + ", '" + this.name + "', " + this.price + ", " + this.Availablity + ")";
         try {
             DB.Conn.Execute(Query);
         } catch (Exception e) {
@@ -30,7 +31,7 @@ public class Student implements Model{
     }
 
     public void update() {
-        String Query = "UPDATE STUDENT SET NAME = '" + this.name + "', DEPT = '" + this.Dept + "', EMAIL = '" + this.email + "' WHERE ID = '" + this.ID + "'";
+        String Query = "UPDATE TEST SET NAME = '" + this.name + "', PRICE = " + this.price + ", AVAILABLITY = " + this.Availablity + " WHERE ID = " + this.ID;
         try {
             DB.Conn.Execute(Query);
         } catch (Exception e) {
@@ -39,7 +40,7 @@ public class Student implements Model{
     }
 
     public void delete() {
-        String Query = "DELETE FROM STUDENT WHERE ID = '" + this.ID + "'";
+        String Query = "DELETE FROM TEST WHERE ID = " + this.ID;
         try {
             DB.Conn.Execute(Query);
         } catch (Exception e) {
@@ -48,15 +49,15 @@ public class Student implements Model{
     }
 
     public void select() {
-        String ID = this.ID;
-        String Query = "SELECT * FROM STUDENT WHERE ID = '" + ID + "'";
+        int ID = this.ID;
+        String Query = "SELECT * FROM TEST WHERE ID = " + ID;
         try {
             java.sql.ResultSet result = DB.Conn.Exedute(Query);
             if (result.next()) {
-                this.ID = result.getString("ID");
+                this.ID = result.getInt("ID");
                 this.name = result.getString("NAME");
-                this.Dept = result.getString("DEPT");
-                this.email = result.getString("EMAIL");
+                this.price = result.getInt("PRICE");
+                this.Availablity = result.getBoolean("AVAILABLITY");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -64,17 +65,17 @@ public class Student implements Model{
     }
 
     public static List<Model> All() {
-        List<Model> students = new ArrayList<Model>();
-        String Query = "SELECT * FROM STUDENT";
+        List<Model> tests = new ArrayList<Model>();
+        String Query = "SELECT * FROM TEST";
         try {
             java.sql.ResultSet result = DB.Conn.Exedute(Query);
             while (result.next()) {
-                Student student = new Student(result.getString("ID"));
-                students.add(student);
+                Test test = new Test(result.getInt("ID"), result.getString("NAME"), result.getInt("PRICE"), result.getBoolean("AVAILABLITY"));
+                tests.add(test);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return students;
+        return tests;
     }
 }

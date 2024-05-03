@@ -1,4 +1,5 @@
 package Model;
+import java.util.List;
 
 public interface Model {
     public void save();
