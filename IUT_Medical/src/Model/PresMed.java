@@ -78,5 +78,14 @@ public class PresMed implements Model{
         return presMeds;
     }
 
+    public void printSignature() {
+        String s = "ID\tVisitID\tMedicineID\tQuantity\n";
+        System.out.println("PresMed");
+    }
+
+    public String toString() {
+        return this.ID + "\t" + this.visit.ID + "\t" + this.medicine.ID + "\t" + this.quantity;
+    }
+
 
 }

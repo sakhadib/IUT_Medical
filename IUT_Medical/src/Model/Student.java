@@ -55,7 +55,7 @@ public class Student implements Model{
             if (result.next()) {
                 this.ID = result.getString("ID");
                 this.name = result.getString("NAME");
-                this.Dept = result.getString("DEPT");
+                this.Dept = result.getString("Department");
                 this.email = result.getString("EMAIL");
             }
         } catch (Exception e) {

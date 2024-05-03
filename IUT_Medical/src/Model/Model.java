@@ -6,4 +6,6 @@ public interface Model {
     public void update();
     public void delete();
     public void select();
+
+    public void printSignature();
 }

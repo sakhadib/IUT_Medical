@@ -22,7 +22,7 @@ public class Visit implements Model{
     }
 
     public void save() {
-        String Query = "INSERT INTO VISIT(StudentID, DoctorID, VisitTime) VALUES ('" + this.student.ID + "', '" + this.doctor.ID + "')";
+        String Query = "INSERT INTO VISIT(StudentID, DoctorID) VALUES ('" + this.student.ID + "', '" + this.doctor.ID + "')";
         try {
             DB.Conn.Execute(Query);
         } catch (Exception e) {
