@@ -77,8 +77,4 @@ public class Visit implements Model{
         }
         return visits;
     }
-
-    
-
-
 }
