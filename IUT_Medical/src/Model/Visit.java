@@ -9,7 +9,7 @@ public class Visit implements Model{
     public int ID;
     public Student student;
     public Doctor doctor;
-    public TIMESTAMP date;
+    public String date;
 
     public Visit(String studentID, String doctorID) {
         this.student = new Student(studentID);
@@ -57,13 +57,14 @@ public class Visit implements Model{
                 this.ID = result.getInt("ID");
                 this.student = new Student(result.getString("StudentID"));
                 this.doctor = new Doctor(result.getString("DoctorID"));
+                this.date = result.getString("VisitTime");
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public static List<Model> getMedicines() {
+    public static List<Model> All() {
         List<Model> visits = new ArrayList<>();
         String Query = "SELECT * FROM VISIT";
         try {
@@ -76,5 +77,14 @@ public class Visit implements Model{
             e.printStackTrace();
         }
         return visits;
+    }
+
+    public void printSignature(){
+        String S = "ID\tStudentID\tDoctorID\tDate\n";
+        System.out.println(S);
+    }
+
+    public String toString(){
+        return this.ID + "\t" + this.student.ID + "\t" + this.doctor.ID + "\t\t" + this.date;
     }
 }

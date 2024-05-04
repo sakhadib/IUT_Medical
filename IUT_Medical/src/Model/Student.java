@@ -77,4 +77,13 @@ public class Student implements Model{
         }
         return students;
     }
+
+    public void printSignature(){
+        String S = "ID\t\t\tName\t\t\tDept\tEmail\n";
+        System.out.println(S);
+    }
+
+    public String toString(){
+        return this.ID + "\t" + this.name + "\t" + this.Dept + "\t\t" + this.email;
+    }
 }

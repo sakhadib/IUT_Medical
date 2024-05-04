@@ -74,5 +74,14 @@ public class PresTest implements Model {
         return prestests;
     }
 
+    public void printSignature(){
+        String s = "ID\tVisitID\tTestID\n";
+        System.out.println(s);
+    }
+
+    public String toString() {
+        return this.ID + "\t" + this.visit.ID + "\t" + this.test.ID;
+    }
+
 
 }

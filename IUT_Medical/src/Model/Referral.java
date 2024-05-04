@@ -60,7 +60,7 @@ public class Referral implements Model{
         }
     }
 
-    public static List<Referral> all() {
+    public static List<Referral> All() {
         List<Referral> referrals = new ArrayList<Referral>();
         String Query = "SELECT * FROM REFERRAL";
         try {
@@ -72,6 +72,14 @@ public class Referral implements Model{
             e.printStackTrace();
         }
         return referrals;
+    }
+
+    public void printSignature(){
+        String S = "ID\tVisitID\tDetails\n";
+    }
+
+    public String toString(){
+        return this.ID + "\t" + this.visit.ID + "\t" + this.Details;
     }
 
 }

@@ -80,11 +80,11 @@ public class Doctor implements Model{
     }
 
     public void printSignature() {
-        String s = "ID\tName\tSpecialization\tEmail\n";
+        String s = "ID\t\t\tName\t\t\tSpecialization\t\tEmail\n";
         System.out.println(s);
     }
 
     public String toString() {
-        return this.ID + "\t" + this.name + "\t" + this.Specialization + "\t" + this.email;
+        return this.ID + "\t\t" + this.name + "\t\t" + this.Specialization + "\t\t\t" + this.email;
     }
 }
