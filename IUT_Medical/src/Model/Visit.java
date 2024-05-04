@@ -79,6 +79,36 @@ public class Visit implements Model{
         return visits;
     }
 
+    public static List<Model> ShowByDoctor(String doctorID) {
+        List<Model> visits = new ArrayList<>();
+        String Query = "SELECT * FROM VISIT WHERE DoctorID = '" + doctorID + "'";
+        try {
+            java.sql.ResultSet result = DB.Conn.Exedute(Query);
+            while (result.next()) {
+                Visit visit = new Visit(result.getInt("ID"));
+                visits.add(visit);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return visits;
+    }
+
+    public static List<Model> ShowByStudent(String studentID) {
+        List<Model> visits = new ArrayList<>();
+        String Query = "SELECT * FROM VISIT WHERE StudentID = '" + studentID + "'";
+        try {
+            java.sql.ResultSet result = DB.Conn.Exedute(Query);
+            while (result.next()) {
+                Visit visit = new Visit(result.getInt("ID"));
+                visits.add(visit);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return visits;
+    }
+
     public void printSignature(){
         String S = "ID\tStudentID\tDoctorID\tDate\n";
         System.out.println(S);

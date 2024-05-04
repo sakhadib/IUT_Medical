@@ -82,6 +82,48 @@ public class Main {
                 controller.show(Model.Visit.All());
             }
 
+            //Show detailed visit
+            else if(command.equals("detailed_visit")){
+                controller = new VisitController();
+                controller.details();
+            }
+
+            //Show all prescriptions
+            else if(command.equals("show_prescriptions")){
+                controller = new PresMedController();
+                controller.show(Model.PresMed.All());
+            }
+
+            //Show all tests
+            else if(command.equals("show_prestests")){
+                controller = new PresTestController();
+                controller.show(Model.PresTest.All());
+            }
+
+            //Show all referrals
+            else if(command.equals("show_referrals")){
+                controller = new ReferralController();
+                controller.show(Model.Referral.All());
+            }
+
+            //Show detailed prescription
+            else if(command.equals("detailed_prescription")){
+                controller = new PresMedController();
+                controller.details();
+            }
+
+            //Show detailed Test
+            else if(command.equals("detailed_Test")){
+                controller = new PresTestController();
+                controller.details();
+            }
+
+            //Show detailed Referral
+            else if(command.equals("detailed_Referral")){
+                controller = new ReferralController();
+                controller.details();
+            }
+
             //Exit
             else if (command.equals("exit")) {
                 break;
@@ -96,17 +138,25 @@ public class Main {
 
     public static void help(){
         System.out.println("Here are the available commands:");
-        System.out.println("create_student");
-        System.out.println("create_doctor");
-        System.out.println("create_medicine");
-        System.out.println("Create_test");
-        System.out.println("visit");
+        System.out.println("[create_student] - Create a new student");
+        System.out.println("[create_doctor] - Create a new doctor");
+        System.out.println("[create_medicine] - Create a new medicine");
+        System.out.println("[Create_test] - Create a new test");
+        System.out.println("[visit] - Create a new visit");
 
-        System.out.println("show_students");
-        System.out.println("show_doctors");
-        System.out.println("show_medicines");
-        System.out.println("show_tests");
-        System.out.println("show_visits");
+        System.out.println("[show_students] - Show all students");
+        System.out.println("[show_doctors] - Show all doctors");
+        System.out.println("[show_medicines] - Show all medicines");
+        System.out.println("[show_tests] - Show all tests");
+        System.out.println("[show_visits] - Show all visits");
+        System.out.println("[show_prescriptions] - Show all prescriptions");
+        System.out.println("[show_prestests] - Show all prescribed Tests");
+        System.out.println("[show_referrals] - Show all referrals");
+        System.out.println("[detailed_visit] - Show detailed visit by doctor or student");
+        System.out.println("[detailed_prescription] - Show detailed prescription by medicine or doctor or student or visit");
+        System.out.println("[detailed_Test] - Show detailed Test by doctor or student or visit");
+        System.out.println("[detailed_Referral] - Show detailed Referral by visit");
+
 
         System.out.println("help");
         System.out.println("exit");

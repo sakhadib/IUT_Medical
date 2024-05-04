@@ -18,4 +18,8 @@ public class MedicineController extends Controller{
         medicine.save();
         System.out.println("--- Medicine created successfully ---");
     }
+
+    public void details(){
+
+    }
 }

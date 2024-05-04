@@ -28,4 +28,9 @@ public class TestController extends Controller{
         System.out.println("--- Test created successfully ---");
 
     }
+
+    @Override
+    public void details(){
+
+    }
 }

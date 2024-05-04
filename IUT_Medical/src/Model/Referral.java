@@ -60,9 +60,23 @@ public class Referral implements Model{
         }
     }
 
-    public static List<Referral> All() {
-        List<Referral> referrals = new ArrayList<Referral>();
+    public static List<Model> All() {
+        List<Model> referrals = new ArrayList<>();
         String Query = "SELECT * FROM REFERRAL";
+        try {
+            java.sql.ResultSet result = DB.Conn.Exedute(Query);
+            while (result.next()) {
+                referrals.add(new Referral(result.getInt("ID")));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return referrals;
+    }
+
+    public static List<Model> ShowByVisit(int visitID){
+        List<Model> referrals = new ArrayList<>();
+        String Query = "SELECT * FROM REFERRAL WHERE VisitID = " + visitID;
         try {
             java.sql.ResultSet result = DB.Conn.Exedute(Query);
             while (result.next()) {

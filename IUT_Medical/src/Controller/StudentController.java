@@ -19,4 +19,8 @@ public class StudentController extends Controller{
         student.save();
         System.out.println("--- Student created successfully ---");
     }
+
+    public void details(){
+
+    }
 }

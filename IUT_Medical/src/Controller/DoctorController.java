@@ -19,4 +19,8 @@ public class DoctorController extends Controller{
         doctor.save();
         System.out.println("--- Doctor created successfully ---");
     }
+
+    public void details(){
+
+    }
 }

@@ -74,6 +74,66 @@ public class PresTest implements Model {
         return prestests;
     }
 
+    public static List<Model> ShowByTest(int TestID){
+        List<Model> presTests = new ArrayList<>();
+        String Query = "SELECT * FROM PRESTEST WHERE TestID = " + TestID;
+        try {
+            java.sql.ResultSet result = DB.Conn.Exedute(Query);
+            while (result.next()) {
+                PresTest presTest = new PresTest(result.getInt("ID"));
+                presTests.add(presTest);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return presTests;
+    }
+
+    public static List<Model> ShowByVisit(int VisitID){
+        List<Model> presTests = new ArrayList<>();
+        String Query = "SELECT * FROM PRESTEST WHERE VisitID = " + VisitID;
+        try {
+            java.sql.ResultSet result = DB.Conn.Exedute(Query);
+            while (result.next()) {
+                PresTest presTest = new PresTest(result.getInt("ID"));
+                presTests.add(presTest);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return presTests;
+    }
+
+    public static List<Model> ShowByDoctor(int DoctorID){
+        List<Model> presTests = new ArrayList<>();
+        String Query = "SELECT * FROM PRESTEST WHERE VisitID IN (SELECT ID FROM VISIT WHERE DoctorID = " + DoctorID + ")";
+        try {
+            java.sql.ResultSet result = DB.Conn.Exedute(Query);
+            while (result.next()) {
+                PresTest presTest = new PresTest(result.getInt("ID"));
+                presTests.add(presTest);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return presTests;
+    }
+
+    public static List<Model> ShowByStudent(int StudentID){
+        List<Model> presTests = new ArrayList<>();
+        String Query = "SELECT * FROM PRESTEST WHERE VisitID IN (SELECT ID FROM VISIT WHERE StudentID = " + StudentID + ")";
+        try {
+            java.sql.ResultSet result = DB.Conn.Exedute(Query);
+            while (result.next()) {
+                PresTest presTest = new PresTest(result.getInt("ID"));
+                presTests.add(presTest);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return presTests;
+    }
+
     public void printSignature(){
         String s = "ID\tVisitID\tTestID\n";
         System.out.println(s);

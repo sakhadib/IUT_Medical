@@ -78,6 +78,66 @@ public class PresMed implements Model{
         return presMeds;
     }
 
+    public static List<Model> ShowByMedicine(int medicineID){
+        List<Model> presMeds = new ArrayList<>();
+        String Query = "SELECT * FROM PRESMED WHERE MedicineID = " + medicineID;
+        try {
+            java.sql.ResultSet result = DB.Conn.Exedute(Query);
+            while (result.next()) {
+                PresMed presMed = new PresMed(result.getInt("ID"));
+                presMeds.add(presMed);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return presMeds;
+    }
+
+    public static List<Model> ShowByDoctor(int doctorID){
+        List<Model> presMeds = new ArrayList<>();
+        String Query = "SELECT * FROM PRESMED WHERE VisitID IN (SELECT ID FROM VISIT WHERE DoctorID = " + doctorID + ")";
+        try {
+            java.sql.ResultSet result = DB.Conn.Exedute(Query);
+            while (result.next()) {
+                PresMed presMed = new PresMed(result.getInt("ID"));
+                presMeds.add(presMed);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return presMeds;
+    }
+
+    public static List<Model> ShowByStudent(int studentID){
+        List<Model> presMeds = new ArrayList<>();
+        String Query = "SELECT * FROM PRESMED WHERE VisitID IN (SELECT ID FROM VISIT WHERE StudentID = " + studentID + ")";
+        try {
+            java.sql.ResultSet result = DB.Conn.Exedute(Query);
+            while (result.next()) {
+                PresMed presMed = new PresMed(result.getInt("ID"));
+                presMeds.add(presMed);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return presMeds;
+    }
+
+    public static List<Model> ShowByVisit(int visitID){
+        List<Model> presMeds = new ArrayList<>();
+        String Query = "SELECT * FROM PRESMED WHERE VisitID = " + visitID;
+        try {
+            java.sql.ResultSet result = DB.Conn.Exedute(Query);
+            while (result.next()) {
+                PresMed presMed = new PresMed(result.getInt("ID"));
+                presMeds.add(presMed);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return presMeds;
+    }
+
     public void printSignature() {
         String s = "ID\tVisitID\tMedicineID\tQuantity\n";
         System.out.println("PresMed");
