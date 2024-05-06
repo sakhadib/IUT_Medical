@@ -4,9 +4,9 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Referral implements Model{
-    int ID;
-    Visit visit;
-    String Details;
+    public int ID;
+    public Visit visit;
+    public String Details;
 
     public Referral(int visitID, String Details) {
         this.visit = new Visit(visitID);

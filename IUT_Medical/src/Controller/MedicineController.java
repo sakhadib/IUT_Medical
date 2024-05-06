@@ -22,4 +22,41 @@ public class MedicineController extends Controller{
     public void details(){
 
     }
+
+    public void update(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Medicine ID:");
+        int medicineID = sc.nextInt();
+
+        Model.Medicine medicine = new Model.Medicine(medicineID);
+
+        System.out.println("Enter the new Medicine Name:");
+        String medicineName = sc.nextLine();
+        System.out.println("Enter the new Medicine Generic:");
+        String medicineGeneric = sc.nextLine();
+        System.out.println("Enter the new Medicine Company:");
+        String medicineCompany = sc.nextLine();
+        System.out.println("Enter the new Medicine Quantity:");
+        int medicineQuantity = sc.nextInt();
+
+        medicine.name = medicineName;
+        medicine.generic = medicineGeneric;
+        medicine.company = medicineCompany;
+        medicine.quantity = medicineQuantity;
+
+        medicine.update();
+
+        System.out.println("--- Medicine updated successfully ---");
+    }
+
+    public void delete(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Medicine ID:");
+        int medicineID = sc.nextInt();
+
+        Model.Medicine medicine = new Model.Medicine(medicineID);
+        medicine.delete();
+
+        System.out.println("--- Medicine deleted successfully ---");
+    }
 }

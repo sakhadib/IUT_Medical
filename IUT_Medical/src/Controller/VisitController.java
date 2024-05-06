@@ -35,4 +35,37 @@ public class VisitController extends Controller{
             System.out.println("Invalid visit type");
         }
     }
+
+    public void update(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Visit ID:");
+        int visitID = sc.nextInt();
+
+        Model.Visit visit = new Model.Visit(visitID);
+
+        System.out.println("Enter the new Doctor ID:");
+        String doctorID = sc.nextLine();
+        System.out.println("Enter the new Student ID:");
+        String studentID = sc.nextLine();
+
+        Model.Doctor doctor = new Model.Doctor(doctorID);
+        Model.Student student = new Model.Student(studentID);
+
+        visit.doctor = doctor;
+        visit.student = student;
+        visit.update();
+
+        System.out.println("--- Visit updated successfully ---");
+    }
+
+    public void delete(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Visit ID:");
+        int visitID = sc.nextInt();
+
+        Model.Visit visit = new Model.Visit(visitID);
+        visit.delete();
+
+        System.out.println("--- Visit deleted successfully ---");
+    }
 }
