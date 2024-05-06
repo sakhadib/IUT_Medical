@@ -2,9 +2,10 @@
 import Controller.*;
 
 import javax.print.Doc;
+import java.sql.SQLException;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args){
         System.out.println("Welcome to the IUT Medical Center");
         System.out.println("Type 'help' to see the available commands");
         Controller controller = null;
@@ -161,4 +162,5 @@ public class Main {
         System.out.println("help");
         System.out.println("exit");
     }
+
 }
