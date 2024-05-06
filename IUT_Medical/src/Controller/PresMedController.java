@@ -46,4 +46,41 @@ public class PresMedController extends Controller{
         }
     }
 
+    public void update(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the PrescriptionMedicine ID:");
+        int pmID = sc.nextInt();
+
+        Model.PresMed pm = new Model.PresMed(pmID);
+
+        System.out.println("Enter the new Visit ID:");
+        int visitID = sc.nextInt();
+        System.out.println("Enter the new Medicine ID:");
+        int medicineID = sc.nextInt();
+        System.out.println("Enter the new Quantity:");
+        int quantity = sc.nextInt();
+
+        Model.Visit visit = new Model.Visit(visitID);
+        Model.Medicine medicine = new Model.Medicine(medicineID);
+
+        pm.visit = visit;
+        pm.medicine = medicine;
+        pm.quantity = quantity;
+
+        pm.update();
+
+        System.out.println("--- PrescriptionMedicine updated successfully ---");
+    }
+
+    public void delete(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the PrescriptionMedicine ID:");
+        int pmID = sc.nextInt();
+
+        Model.PresMed pm = new Model.PresMed(pmID);
+        pm.delete();
+
+        System.out.println("--- PrescriptionMedicine deleted successfully ---");
+    }
+
 }

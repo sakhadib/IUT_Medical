@@ -23,4 +23,37 @@ public class DoctorController extends Controller{
     public void details(){
 
     }
+
+    public void update(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Doctor ID:");
+        String doctorID = sc.nextLine();
+
+        Model.Doctor doctor = new Model.Doctor(doctorID);
+        System.out.println("Enter the new Doctor Name:");
+        String doctorName = sc.nextLine();
+        System.out.println("Enter the new Doctor Email:");
+        String doctorEmail = sc.nextLine();
+        System.out.println("Enter the new Doctor Specialty:");
+        String doctorSpecialty = sc.nextLine();
+
+        doctor.name = doctorName;
+        doctor.email = doctorEmail;
+        doctor.Specialization = doctorSpecialty;
+
+        doctor.update();
+
+        System.out.println("--- Doctor updated successfully ---");
+    }
+
+    public void delete(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Doctor ID:");
+        String doctorID = sc.nextLine();
+
+        Model.Doctor doctor = new Model.Doctor(doctorID);
+        doctor.delete();
+
+        System.out.println("--- Doctor deleted successfully ---");
+    }
 }
