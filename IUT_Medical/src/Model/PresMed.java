@@ -4,10 +4,10 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class PresMed implements Model{
-    int ID;
-    Visit visit;
-    Medicine medicine;
-    int quantity;
+    public int ID;
+    public Visit visit;
+    public Medicine medicine;
+    public int quantity;
 
     public PresMed(int visitID, int medicineID, int quantity) {
         this.visit = new Visit(visitID);

@@ -3,9 +3,9 @@ package Model;
 import java.util.List;
 import java.util.ArrayList;
 public class PresTest implements Model {
-    int ID;
-    Visit visit;
-    Test test;
+    public int ID;
+    public Visit visit;
+    public Test test;
 
     public PresTest(int visitID, int testID) {
         this.visit = new Visit(visitID);

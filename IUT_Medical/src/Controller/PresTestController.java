@@ -1,7 +1,5 @@
 package Controller;
 
-import Model.Test;
-
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
@@ -48,6 +46,40 @@ public class PresTestController extends Controller{
         else {
             System.out.println("Invalid details type");
         }
+    }
+
+    public void update(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the PrescriptionTest ID:");
+        int ptID = sc.nextInt();
+
+        Model.PresTest pt = new Model.PresTest(ptID);
+
+        System.out.println("Enter the new Visit ID:");
+        int visitID = sc.nextInt();
+        System.out.println("Enter the new Test ID:");
+        int testID = sc.nextInt();
+
+        Model.Visit visit = new Model.Visit(visitID);
+        Model.Test test = new Model.Test(testID);
+
+        pt.visit = visit;
+        pt.test = test;
+
+        pt.update();
+
+        System.out.println("--- PrescriptionTest updated successfully ---");
+    }
+
+    public void delete(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the PrescriptionTest ID:");
+        int ptID = sc.nextInt();
+
+        Model.PresTest pt = new Model.PresTest(ptID);
+        pt.delete();
+
+        System.out.println("--- PrescriptionTest deleted successfully ---");
     }
 
 
