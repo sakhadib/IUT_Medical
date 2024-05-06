@@ -45,6 +45,116 @@ public class Main {
                 controller.create();
             }
 
+            //Update Statements
+            //Update a student
+            else if(command.equals("update_student")){
+                controller = new StudentController();
+                controller.update();
+            }
+
+            //Update a doctor
+            else if(command.equals("update_doctor")){
+                controller = new DoctorController();
+                controller.update();
+            }
+
+            //Update a medicine
+            else if(command.equals("update_medicine")){
+                controller = new MedicineController();
+                controller.update();
+            }
+
+            //Update a test
+            else if(command.equals("update_test")){
+                controller = new TestController();
+                controller.update();
+            }
+
+            //Update a visit
+            else if(command.equals("update_visit")){
+                controller = new VisitController();
+                controller.update();
+            }
+
+            //Update a prescription
+            else if(command.equals("update_prescription")){
+                controller = new PresMedController();
+                controller.update();
+            }
+
+            //Update a prescription test
+            else if(command.equals("update_prescription_test")){
+                controller = new PresTestController();
+                controller.update();
+            }
+
+            //Update a referral
+            else if(command.equals("update_referral")){
+                controller = new ReferralController();
+                controller.update();
+            }
+
+            //Update a bill
+            else if(command.equals("update_bill")){
+                controller = new BillController();
+                controller.update();
+            }
+
+            //Delete Statements
+            //Delete a student
+            else if(command.equals("delete_student")){
+                controller = new StudentController();
+                controller.delete();
+            }
+
+            //Delete a doctor
+            else if(command.equals("delete_doctor")){
+                controller = new DoctorController();
+                controller.delete();
+            }
+
+            //Delete a medicine
+            else if(command.equals("delete_medicine")){
+                controller = new MedicineController();
+                controller.delete();
+            }
+
+            //Delete a test
+            else if(command.equals("delete_test")){
+                controller = new TestController();
+                controller.delete();
+            }
+
+            //Delete a visit
+            else if(command.equals("delete_visit")){
+                controller = new VisitController();
+                controller.delete();
+            }
+
+            //Delete a prescription
+            else if(command.equals("delete_prescription")){
+                controller = new PresMedController();
+                controller.delete();
+            }
+
+            //Delete a prescription test
+            else if(command.equals("delete_prescription_test")){
+                controller = new PresTestController();
+                controller.delete();
+            }
+
+            //Delete a referral
+            else if(command.equals("delete_referral")){
+                controller = new ReferralController();
+                controller.delete();
+            }
+
+            //Delete a bill
+            else if(command.equals("delete_bill")){
+                controller = new BillController();
+                controller.delete();
+            }
+
             //Help
             else if(command.equals("help")){
                 help();
@@ -143,6 +253,26 @@ public class Main {
         System.out.println("[create_medicine] - Create a new medicine");
         System.out.println("[Create_test] - Create a new test");
         System.out.println("[visit] - Create a new visit");
+
+        System.out.println("[update_student] - Update a student");
+        System.out.println("[update_doctor] - Update a doctor");
+        System.out.println("[update_medicine] - Update a medicine");
+        System.out.println("[update_test] - Update a test");
+        System.out.println("[update_visit] - Update a visit");
+        System.out.println("[update_prescription] - Update a prescription");
+        System.out.println("[update_prescription_test] - Update a prescription test");
+        System.out.println("[update_referral] - Update a referral");
+        System.out.println("[update_bill] - Update a bill");
+
+        System.out.println("[delete_student] - Delete a student");
+        System.out.println("[delete_doctor] - Delete a doctor");
+        System.out.println("[delete_medicine] - Delete a medicine");
+        System.out.println("[delete_test] - Delete a test");
+        System.out.println("[delete_visit] - Delete a visit");
+        System.out.println("[delete_prescription] - Delete a prescription");
+        System.out.println("[delete_prescription_test] - Delete a prescription test");
+        System.out.println("[delete_referral] - Delete a referral");
+        System.out.println("[delete_bill] - Delete a bill");
 
         System.out.println("[show_students] - Show all students");
         System.out.println("[show_doctors] - Show all doctors");
