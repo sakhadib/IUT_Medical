@@ -20,4 +20,8 @@ public abstract class Controller {
     public abstract void create();
     public abstract void details();
 
+    public abstract void update();
+
+    public abstract void delete();
+
 }
