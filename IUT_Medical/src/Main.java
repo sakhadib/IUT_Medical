@@ -281,6 +281,20 @@ public class Main {
                     }
                     break;
                 }
+                case "populate":{
+                    help.help_populate();
+
+                    System.out.println("Enter a command:");
+                    java.util.Scanner scc = new java.util.Scanner(System.in);
+                    String commands = sc.nextLine();
+
+                    //Populate students
+                    if (commands.equals("students")) {
+                        StudentController sc1 = new StudentController();
+                        sc1.populate();
+                    }
+                    break;
+                }
 
                 //Exit
                 case "exit":

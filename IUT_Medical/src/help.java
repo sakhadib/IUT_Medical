@@ -8,7 +8,8 @@ public class help {
         System.out.println("02. Update an object: \t\tupdate");
         System.out.println("03. Delete an object: \t\tdelete");
         System.out.println("04. Show objects: \t\t\tshow");
-        System.out.println("05. Exit the program: \t\texit");
+        System.out.println("05. Populate the database: \tpopulate");
+        System.out.println("06. Exit the program: \t\texit");
         System.out.println("\n");
     }
     public static void help_create(){
@@ -68,6 +69,21 @@ public class help {
         System.out.println("12. Show details of a referral: \t\tdetailed_referral");
         System.out.println("13. Show bills: \t\t\t\t\t\tbill");
         System.out.println("10. Go back: \t\t\t\t\t\t\tback");
+        System.out.println("\n");
+    }
+
+    public static void help_populate(){
+        System.out.println("Follow the instructions to populate the database:");
+        System.out.println("01. Populate students: \t\t\tstudents");
+        System.out.println("02. Populate doctors: \t\t\tdoctors");
+        System.out.println("03. Populate medicines: \t\t\tmedicines");
+        System.out.println("04. Populate tests: \t\t\t\ttests");
+        System.out.println("05. Populate visits: \t\t\t\tvisits");
+        System.out.println("06. Populate prescriptions: \t\tprescriptions");
+        System.out.println("07. Populate prescribed tests: \tprescribed_tests");
+        System.out.println("08. Populate referrals: \t\t\treferrals");
+        System.out.println("09. Populate bills: \t\t\t\tbills");
+        System.out.println("10. Go back: \t\t\t\t\tback");
         System.out.println("\n");
     }
 }

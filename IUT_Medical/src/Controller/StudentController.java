@@ -1,5 +1,10 @@
 package Controller;
 
+import Utility.StudentHelper;
+
+import java.util.List;
+import java.util.Objects;
+import java.util.Random;
 import java.util.Scanner;
 
 public class StudentController extends Controller{
@@ -12,6 +17,11 @@ public class StudentController extends Controller{
         String email = sc.nextLine();
         System.out.println("Student Department:");
         String Dept = sc.nextLine();
+
+        if(!Dept.equals("CSE") && !Dept.equals("EEE") && !Dept.equals("CEE") && !Dept.equals("MPE") && !Dept.equals("BTM")){
+            System.out.println("Invalid Department");
+            return;
+        }
 
         Model.Student student = new Model.Student(name, email, Dept);
         student.save();
@@ -55,4 +65,25 @@ public class StudentController extends Controller{
 
         System.out.println("--- Student deleted successfully ---");
     }
+
+
+    public void populate(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of students to populate:");
+        int count = sc.nextInt();
+
+        List<String> names = Utility.StudentHelper.getUniqueNames(count);
+        List<String> emails = Utility.StudentHelper.getEmails(names);
+        String[] depts = StudentHelper.depts;
+        Random random = new Random(); // Initialize Random instance
+
+        for(int i = 0; i < count; i++){
+            String name = names.get(i);
+            String email = emails.get(i);
+            String dept = depts[random.nextInt(depts.length)]; // Use random.nextInt()
+            Model.Student student = new Model.Student(name, email, dept);
+            student.save();
+        }
+    }
+
 }
