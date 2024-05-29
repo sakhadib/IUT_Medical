@@ -83,4 +83,5 @@ public class Bill implements Model{
     public String toString() {
         return this.ID + "\t" + this.referral.ID + "\t" + this.Amount;
     }
+
 }
