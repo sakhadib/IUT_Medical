@@ -8,8 +8,7 @@ public class Student implements Model{
     public String email;
     public String Dept;
 
-    public Student(String ID, String name, String email, String Dept) {
-        this.ID = ID;
+    public Student(String name, String email, String Dept) {
         this.name = name;
         this.email = email;
         this.Dept = Dept;
@@ -21,7 +20,7 @@ public class Student implements Model{
     }
 
     public void save() {
-        String Query = "INSERT INTO STUDENT VALUES ('" + this.ID + "', '" + this.name + "', '" + this.Dept + "', '" + this.email + "')";
+        String Query = "INSERT INTO STUDENT VALUES ('" + 1 + "', '" + this.name + "', '" + this.Dept + "', '" + this.email + "')";
         try {
             DB.Conn.Execute(Query);
         } catch (Exception e) {
