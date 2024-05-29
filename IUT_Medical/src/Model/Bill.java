@@ -4,9 +4,9 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Bill implements Model{
-    int ID;
-    Referral referral;
-    int Amount;
+    public int ID;
+    public Referral referral;
+    public int Amount;
 
     public Bill(int referralID, int Amount) {
         this.referral = new Referral(referralID);
@@ -83,4 +83,5 @@ public class Bill implements Model{
     public String toString() {
         return this.ID + "\t" + this.referral.ID + "\t" + this.Amount;
     }
+
 }
