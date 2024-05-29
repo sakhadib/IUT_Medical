@@ -177,3 +177,17 @@
 --   :NEW.ID := v_id;
 -- END;
 -- /
+
+
+
+
+CREATE SEQUENCE doctor_id_seq START WITH 1 INCREMENT BY 1 MAXVALUE 99 CYCLE NOCACHE;
+
+CREATE OR REPLACE TRIGGER doctor_id_trigger
+BEFORE INSERT ON Doctor
+FOR EACH ROW
+BEGIN
+  :NEW.ID := 'DOC-' || TO_CHAR(SYSDATE, 'YY') || '-' || LPAD(doctor_id_seq.NEXTVAL, 2, '0');
+END;
+/
+

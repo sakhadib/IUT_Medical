@@ -1,13 +1,12 @@
 package Controller;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class DoctorController extends Controller{
     public void create(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Creating a Doctor");
-        System.out.println("Doctor ID:");
-        String ID = sc.nextLine();
         System.out.println("Doctor Name:");
         String name = sc.nextLine();
         System.out.println("Doctor Email:");
@@ -15,7 +14,7 @@ public class DoctorController extends Controller{
         System.out.println("Doctor Specialty:");
         String Dept = sc.nextLine();
 
-        Model.Doctor doctor = new Model.Doctor(ID, name, email, Dept);
+        Model.Doctor doctor = new Model.Doctor(name, email, Dept);
         doctor.save();
         System.out.println("--- Doctor created successfully ---");
     }
@@ -55,5 +54,20 @@ public class DoctorController extends Controller{
         doctor.delete();
 
         System.out.println("--- Doctor deleted successfully ---");
+    }
+
+    public void populate(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of Doctors to populate:");
+        int count = sc.nextInt();
+
+        List<String> names = Utility.DoctorHelper.getUniqueNames(count);
+        List<String> specializations = Utility.DoctorHelper.getSpecializations(count);
+        List<String> emails = Utility.DoctorHelper.getEmails(names);
+
+        for (int i = 0; i < count; i++) {
+            Model.Doctor doctor = new Model.Doctor(names.get(i), emails.get(i), specializations.get(i));
+            doctor.save();
+        }
     }
 }

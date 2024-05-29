@@ -9,8 +9,7 @@ public class Doctor implements Model{
     public String email;
     public String Specialization;
 
-    public Doctor(String ID, String name, String email, String Specialization) {
-        this.ID = ID;
+    public Doctor(String name, String email, String Specialization) {
         this.name = name;
         this.email = email;
         this.Specialization = Specialization;
@@ -22,7 +21,7 @@ public class Doctor implements Model{
     }
 
     public void save() {
-        String Query = "INSERT INTO DOCTOR VALUES ('" + this.ID + "', '" + this.name + "', '" + this.Specialization + "', '" + this.email + "')";
+        String Query = "INSERT INTO DOCTOR VALUES ('" + 1 + "', '" + this.name + "', '" + this.Specialization + "', '" + this.email + "')";
         try {
             DB.Conn.Execute(Query);
         } catch (Exception e) {
