@@ -14,23 +14,23 @@ public class BillController extends Controller{
     }
 
     public void details(){
-        System.out.println("Which Details do you want to see?(student/doctor)");
-        Scanner sc = new Scanner(System.in);
-        String detailsType = sc.nextLine();
-        if(detailsType.equals("student")){
-            System.out.println("Enter the Student ID:");
-            int referralID = sc.nextInt();
-            show(Model.Bill.ShowByStudent(referralID));
-        }
-        else if(detailsType.equals("doctor")){
-            System.out.println("Enter the Doctor ID:");
-            int doctorID = sc.nextInt();
-            show(Model.Bill.ShowByDoctor(doctorID));
-        }
-        else {
-            System.out.println("Invalid details type");
-        }
-
+//        System.out.println("Which Details do you want to see?(student/doctor)");
+//        Scanner sc = new Scanner(System.in);
+//        String detailsType = sc.nextLine();
+//        if(detailsType.equals("student")){
+//            System.out.println("Enter the Student ID:");
+//            int referralID = sc.nextInt();
+//            show(Model.Bill.ShowByStudent(referralID));
+//        }
+//        else if(detailsType.equals("doctor")){
+//            System.out.println("Enter the Doctor ID:");
+//            int doctorID = sc.nextInt();
+//            show(Model.Bill.ShowByDoctor(doctorID));
+//        }
+//        else {
+//            System.out.println("Invalid details type");
+//        }
+//
     }
 
     public void update(){
