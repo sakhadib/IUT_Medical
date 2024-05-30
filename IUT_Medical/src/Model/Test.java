@@ -87,16 +87,19 @@ public class Test implements Model{
     }
 
     public void printSignature(){
-        String S = "ID\tName\tPrice\tAvailablity\n";
-        System.out.println(S);
+
     }
 
     public String toString(){
+        String Av;
         if(this.Availablity == 1){
-            return this.ID + "\t" + this.name + "\t" + this.price + "\t" + "Available";
+            Av = "Available";
         }
         else{
-            return this.ID + "\t" + this.name + "\t" + this.price + "\t" + "Not Available";
+            Av = "Not Available";
         }
+
+        String S = "ID : " + this.ID + "\nName : " + this.name + "\nPrice : " + this.price + "\nAvailablity : " + Av + "\n\n";
+        return S;
     }
 }

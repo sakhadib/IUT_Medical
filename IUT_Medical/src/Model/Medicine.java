@@ -90,11 +90,11 @@ public class Medicine implements Model {
     }
 
     public void printSignature(){
-        String s = "ID\tName\tGeneric\tCompany\tQuantity\n";
-        System.out.println(s);
+
     }
 
     public String toString(){
-        return this.ID + "\t" + this.name + "\t" + this.generic + "\t" + this.company + "\t" + this.quantity;
+        String S = "ID : " + this.ID + "\nName : " + this.name + "\nGeneric : " + this.generic + "\nCompany : " + this.company + "\nQuantity : " + this.quantity + "\n\n";
+        return S;
     }
 }

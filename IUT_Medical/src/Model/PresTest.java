@@ -141,12 +141,14 @@ public class PresTest implements Model {
     }
 
     public void printSignature(){
-        String s = "ID\tVisitID\tStudent ID\tTestID\n";
-        System.out.println(s);
+
     }
 
     public String toString() {
-        return this.ID + "\t" + this.visit.ID + "\t" + this.visit.student.ID+ "\t" + this.test.ID;
+        String S = "ID : " + this.ID +
+                "\nStudent : " + this.visit.student.name + "(" + this.visit.student.ID + ")" +
+                "\nTestID : " + this.test.ID;
+        return S;
     }
 
 
