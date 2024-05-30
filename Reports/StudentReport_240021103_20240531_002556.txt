@@ -1,0 +1,38 @@
+Student ID: 240021103
+Student Name: Sanjana Khatun
+Student Email: sanjanakhatun@iut-dhaka.edu
+Department: EEE
+
+
+Detailed Report:
+Visit ID: 6
+Doctor ID: DOC-2401
+Doctor Name: Dr. Santanu Sharma
+Visit Date: 2024-05-30 23:53:34
+
+Prescribed Medicines: 
+Aquilin
+Vivazep
+Aquilin
+
+
+Visit ID: 7
+Doctor ID: DOC-2403
+Doctor Name: Dr. Amin Saha
+Visit Date: 2024-05-30 23:55:10
+
+Prescribed Medicines: 
+Zymerin
+Aquilin
+
+
+Visit ID: 9
+Doctor ID: DOC-2405
+Doctor Name: Dr. Tulika Niyogi
+Visit Date: 2024-05-30 23:55:10
+
+Prescribed Medicines: 
+Vivazep
+Aquilin
+
+
