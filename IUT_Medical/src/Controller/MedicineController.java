@@ -1,5 +1,10 @@
 package Controller;
 
+import Utility.MedsHelper;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 public class MedicineController extends Controller{
     public void create(){
@@ -58,5 +63,27 @@ public class MedicineController extends Controller{
         medicine.delete();
 
         System.out.println("--- Medicine deleted successfully ---");
+    }
+
+    public void populate(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of medicines to populate:");
+        int count = sc.nextInt();
+
+        Random rand = new Random();
+
+        List<String> medsName = MedsHelper.getRandomMeds(count);
+        List<String> medsGeneric = MedsHelper.getRandomGeneric(count);
+        List<String> medsCompany = MedsHelper.getRandomCompany(count);
+
+        for(int i=0; i<count; i++){
+            String name = medsName.get(i);
+            String generic = medsGeneric.get(i);
+            String company = medsCompany.get(i);
+            int quantity = rand.nextInt(50)*100;
+
+            Model.Medicine medicine = new Model.Medicine(name, generic, company, quantity);
+            medicine.save();
+        }
     }
 }

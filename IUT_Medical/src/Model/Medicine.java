@@ -23,7 +23,7 @@ public class Medicine implements Model {
     }
 
     public void save() {
-        String Query = "INSERT INTO MEDICINE(Name, Generic, Company, Quantity) VALUES ('" + this.name + "', '" + this.generic + "', '" + this.company + "', " + this.quantity + ")";
+        String Query = "INSERT INTO MEDICINE VALUES ('" + 1 + "', '" + this.name + "', '" + this.generic + "', '" + this.company + "', " + this.quantity + ")";
         try {
             DB.Conn.Execute(Query);
         } catch (Exception e) {
@@ -79,6 +79,12 @@ public class Medicine implements Model {
             e.printStackTrace();
         }
         return Medicines;
+    }
+
+    public static void stock(int medID, int quantity){
+        Medicine m = new Medicine(medID);
+        m.quantity += quantity;
+        m.update();
     }
 
     public void printSignature(){

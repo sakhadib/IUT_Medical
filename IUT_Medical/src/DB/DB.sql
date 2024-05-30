@@ -19,8 +19,8 @@ CREATE TABLE Student (
 
 CREATE TABLE Doctor (
                         ID VARCHAR2(10),
-                        Name VARCHAR2(30),
-                        Specialization VARCHAR2(10),
+                        Name VARCHAR2(100),
+                        Specialization VARCHAR2(100),
                         email VARCHAR2(255),
                         PRIMARY KEY (ID)
 );
