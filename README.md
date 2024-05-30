@@ -1,6 +1,5 @@
 # Smart IUT Medical Center
 
-## Abstract
 IUT Medical Center is developed aiming a robust medical center database system using Java, JDBC, and Oracle 11g. This system streamlines patient record management, appointment scheduling, and medical care processes. Ultimately, this project seeks to elevate patient care standards and improve healthcare efficiency.
 
 ## Team
