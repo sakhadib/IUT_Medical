@@ -7,7 +7,6 @@ import java.sql.SQLException;
 public class Main {
 
     public static void main(String[] args) {
-        Utility.Stat.generateStudentReport();
         System.out.println("\n");
 
         System.out.println("Welcome to the IUT Medical Center");
@@ -73,6 +72,9 @@ public class Main {
 
                     else if (commands.equals("back")) {
                         break;
+                    }
+                    else{
+                        System.out.println("Invalid command! Please see the help menu and provide a valid command.");
                     }
 
                     break;
@@ -142,6 +144,9 @@ public class Main {
                     } else if (commands.equals("back")) {
                         break;
                     }
+                    else{
+                        System.out.println("Invalid command! Please see the help menu and provide a valid command.");
+                    }
                     break;
                 }
 
@@ -208,6 +213,9 @@ public class Main {
                         controller.delete();
                     } else if (commands.equals("back")) {
                         break;
+                    }
+                    else{
+                        System.out.println("Invalid command! Please see the help menu and provide a valid command.");
                     }
                     break;
                 }
@@ -294,8 +302,13 @@ public class Main {
                     } else if (commands.equals("back")) {
                         break;
                     }
+                    else{
+                        System.out.println("Invalid command! Please see the help menu and provide a valid command.");
+                    }
                     break;
                 }
+
+                //Populate Statements
                 case "populate":{
                     help.help_populate();
 
@@ -311,10 +324,48 @@ public class Main {
                     else if (commands.equals("doctors")) {
                         DoctorController dc1 = new DoctorController();
                         dc1.populate();
-                    } else if (commands.equals("medicines")) {
+                    }
+                    else if (commands.equals("medicines")) {
                         MedicineController mc1 = new MedicineController();
                         mc1.populate();
                     }
+                    else if (commands.equals("tests")) {
+                        TestController tc1 = new TestController();
+                        tc1.populate();
+                    }
+                    else if (commands.equals("visits")) {
+                        VisitController vc1 = new VisitController();
+                        vc1.populate();
+                    }
+                    else if (commands.equals("presmeds")) {
+                        PresMedController pmc1 = new PresMedController();
+                        pmc1.populate();
+                    }
+
+                    else if (commands.equals("prescriptions")) {
+                        PresMedController pmc1 = new PresMedController();
+                        pmc1.populate();
+                    }
+                    else if (commands.equals("prescribed_tests")) {
+
+                        PresTestController ptc1 = new PresTestController();
+                        ptc1.populate();
+                    }
+                    else if (commands.equals("referrals")) {
+                        ReferralController rc1 = new ReferralController();
+                        rc1.populate();
+                    }
+                    else if (commands.equals("bills")) {
+                        BillController bc1 = new BillController();
+                        bc1.populate();
+                    }
+                    else if (commands.equals("back")) {
+                        break;
+                    }
+                    else{
+                        System.out.println("Invalid command! Please see the help menu and provide a valid command.");
+                    }
+
                     break;
                 }
 
@@ -325,7 +376,7 @@ public class Main {
 
                 //Invalid command
                 default:
-                    System.out.println("Invalid command");
+                    System.out.println("Invalid command! Please see the help menu and provide a valid command.");
                     break;
             }
         } while (true);

@@ -72,7 +72,6 @@ public class VisitController extends Controller{
 
         System.out.println("--- Visit deleted successfully ---");
     }
-
     public void populate(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of Visits to populate:");

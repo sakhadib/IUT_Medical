@@ -21,7 +21,7 @@ public class PresMed implements Model{
     }
 
     public void save() {
-        String Query = "INSERT INTO PRESMED(VisitID, MedicineID, Quantity) VALUES (" + this.visit.ID + ", " + this.medicine.ID + ", " + this.quantity + ")";
+        String Query = "INSERT INTO PRESMED VALUES ('" + 1 + "', " + this.visit.ID + ", " + this.medicine.ID + ", " + this.quantity + ")";
         try {
             DB.Conn.Execute(Query);
         } catch (Exception e) {

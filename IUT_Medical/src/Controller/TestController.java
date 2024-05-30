@@ -51,11 +51,11 @@ public class TestController extends Controller{
         int testPrice = sc.nextInt();
         System.out.println("Is it Available? (true/false)");
         String available = sc.next();
-        Boolean av;
+        int av;
         if(available.equals("true")){
-            av = true;
+            av = 1;
         }else{
-            av = false;
+            av = 0;
         }
 
         test.name = testName;
