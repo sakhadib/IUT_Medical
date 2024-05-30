@@ -1,0 +1,23 @@
+Medicine ID: 2
+Medicine Name: Rivatol
+Medicine Quantity: 1690
+
+Detailed Report:
+Prescription ID: 1
+Visit ID: 3
+Student ID: 240021101
+Doctor ID: DOC-2405
+Quantity: 2
+
+Prescription ID: 8
+Visit ID: 1
+Student ID: 240051101
+Doctor ID: DOC-2404
+Quantity: 4
+
+Prescription ID: 9
+Visit ID: 2
+Student ID: 240051103
+Doctor ID: DOC-2404
+Quantity: 10
+

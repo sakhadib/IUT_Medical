@@ -92,11 +92,16 @@ public class Referral implements Model{
     }
 
     public void printSignature(){
-        String S = "ID\tVisitID\tDetails\n";
+
     }
 
     public String toString(){
-        return this.ID + "\t" + this.visit.ID + "\t" + this.Details;
+        String S = "ID : " + this.ID +
+            "\nStudent : " + this.visit.student.name + "(" + this.visit.student.ID + ")" +
+                "\nDoctor : " + this.visit.doctor.name + "(" + this.visit.doctor.ID + ")" +
+                "\nDate : " + this.visit.date +
+            "\nDetails : " + this.Details + "\n\n";
+        return S;
     }
 
 }

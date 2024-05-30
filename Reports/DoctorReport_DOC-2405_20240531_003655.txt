@@ -1,0 +1,30 @@
+Doctor ID: DOC-2405
+Doctor Name: Dr. Tulika Niyogi
+Doctor Email: tulikaniyogi@iut-dhaka.edu
+Department: Oncology
+
+
+Detailed Report:
+Visit ID: 9
+Student ID: 240021103
+Student Name: Sanjana Khatun
+Visit Date: 2024-05-30 23:55:10
+
+Prescribed Medicines: 
+Vivazep
+Aquilin
+
+
+Visit ID: 10
+Student ID: 240051101
+Student Name: Meera Sen
+Visit Date: 2024-05-30 23:55:10
+
+Prescribed Medicines: 
+Vivazep
+Hexalax
+Vivazep
+Vivazep
+Hexalax
+
+

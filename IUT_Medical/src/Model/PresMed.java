@@ -27,6 +27,8 @@ public class PresMed implements Model{
         } catch (Exception e) {
             e.printStackTrace();
         }
+        medicine.quantity -= quantity;
+        medicine.update();
     }
 
     public void update() {
@@ -144,12 +146,16 @@ public class PresMed implements Model{
     }
 
     public void printSignature() {
-        String s = "ID\tVisitID\tMedicineID\tQuantity\n";
-        System.out.println("PresMed");
+
     }
 
     public String toString() {
-        return this.ID + "\t" + this.visit.ID + "\t" + this.medicine.ID + "\t" + this.quantity;
+        String S = "ID : " + this.ID +
+                "\nDate : " + this.visit.date +
+            "\nStudent : " + this.visit.student.name + "(" + this.visit.student.ID + ")" +
+            "\nMedicine : " + this.medicine.name +
+            "\nQuantity : " + this.quantity + "\n\n";
+        return S;
     }
 
 

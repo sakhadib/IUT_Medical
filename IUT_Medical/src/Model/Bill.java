@@ -110,12 +110,15 @@ public class Bill implements Model{
     }
 
     public void printSignature() {
-        String signature = "ID\tReferralID\tAmount\n";
-        System.out.println(signature);
+
     }
 
     public String toString() {
-        return this.ID + "\t" + this.referral.ID + "\t" + this.Amount;
+        String S = "ID : " + this.ID +
+                "\nStudent : " + this.referral.visit.student.name + "(" + this.referral.visit.student.ID + ")" +
+                "\nDoctor : " + this.referral.visit.doctor.name + "(" + this.referral.visit.doctor.ID + ")" +
+                "\nAmount : BDT " + this.Amount + "\n\n";
+        return S;
     }
 
 }

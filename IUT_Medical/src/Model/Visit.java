@@ -118,11 +118,13 @@ public class Visit implements Model{
     }
 
     public void printSignature(){
-        String S = "ID\tStudentID\tDoctorID\tDate\n";
-        System.out.println(S);
+
     }
 
     public String toString(){
-        return this.ID + "\t" + this.student.ID + "\t" + this.doctor.ID + "\t" + this.date;
+        return "Visit ID: " + this.ID + "\n"
+                + "Student ID: " + this.student.name + "(" + this.student.ID + ")\n"
+                + "Doctor ID: " + this.doctor.name + "(" + this.doctor.ID + ")\n"
+                + "Date: " + this.date + "\n";
     }
 }

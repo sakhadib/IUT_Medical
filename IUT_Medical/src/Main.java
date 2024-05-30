@@ -7,7 +7,6 @@ import java.sql.SQLException;
 public class Main {
 
     public static void main(String[] args) {
-        Utility.Stat.generateStudentReport();
         System.out.println("\n");
 
         System.out.println("Welcome to the IUT Medical Center");
@@ -374,6 +373,34 @@ public class Main {
                     else if (commands.equals("back")) {
                         break;
                     }
+                    else{
+                        System.out.println("Invalid command! Please see the help menu and provide a valid command.");
+                    }
+
+                    break;
+                }
+
+                case "export":{
+                    help.help_export();
+
+                    System.out.println("Enter a command:");
+                    java.util.Scanner scc = new java.util.Scanner(System.in);
+                    String commands = sc.nextLine();
+
+                    //Export students
+                    if (commands.equals("student")) {
+                        Utility.Stat.generateStudentReport();
+                    }
+                    else if (commands.equals("doctor")) {
+                        Utility.Stat.generateDoctorReport();
+                    }
+                    else if (commands.equals("medicine")) {
+                        Utility.Stat.generateMedicineReport();
+                    }
+                    else if (commands.equals("back")) {
+                        break;
+                    }
+
                     else{
                         System.out.println("Invalid command! Please see the help menu and provide a valid command.");
                     }

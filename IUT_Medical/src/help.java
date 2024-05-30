@@ -9,7 +9,8 @@ public class help {
         System.out.println("03. Delete an object: \t\tdelete");
         System.out.println("04. Show objects: \t\t\tshow");
         System.out.println("05. Populate the database: \tpopulate");
-        System.out.println("06. Exit the program: \t\texit");
+        System.out.println("06. Export a report: \t\texport");
+        System.out.println("07. Exit the program: \t\texit");
         System.out.println("\n");
     }
     public static void help_create(){
@@ -89,5 +90,14 @@ public class help {
         System.out.println("09. Populate bills: \t\t\tbills");
         System.out.println("10. Go back: \t\t\t\t\tback");
         System.out.println("\n");
+    }
+
+    public static void help_export(){
+        System.out.println("\n\nFollow the instructions to export an object:");
+        System.out.println("01. Export a student report: \t\t\tstudent");
+        System.out.println("02. Export a doctor report: \t\t\tdoctor");
+        System.out.println("03. Export a medicine report: \t\t\tmedicine");
+
+
     }
 }
