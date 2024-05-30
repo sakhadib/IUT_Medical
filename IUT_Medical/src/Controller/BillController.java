@@ -1,4 +1,5 @@
 package Controller;
+import java.util.Random;
 import java.util.Scanner;
 import java.util.List;
 
@@ -66,17 +67,18 @@ public class BillController extends Controller{
         System.out.println("--- Bill deleted successfully ---");
     }
 
-    public void populate() {
-        List<Model.Bill> bills = Model.Bill.all();
-        if (bills.isEmpty()) {
-            System.out.println("No bills available.");
-        } else {
-            System.out.println("List of all bills:");
-            System.out.println("ID\tReferralID\tAmount");
-            for (Model.Bill bill : bills) {
-                System.out.println(bill);
-            }
+    public void populate(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of bills to populate:");
+        int count = sc.nextInt();
+        Random rand = new Random();
+
+        for (int i = 0; i < count; i++) {
+            Model.Bill bill = new Model.Bill(rand.nextInt(10), rand.nextInt(1000));
+            bill.save();
         }
+        System.out.println("--- Bills populated successfully ---");
     }
+
 
 }
