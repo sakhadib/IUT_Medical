@@ -1,5 +1,9 @@
 package Controller;
 
+
+
+import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class VisitController extends Controller{
@@ -67,5 +71,20 @@ public class VisitController extends Controller{
         visit.delete();
 
         System.out.println("--- Visit deleted successfully ---");
+    }
+
+    public void populate(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of Visits to populate:");
+        int count = sc.nextInt();
+        List<Model.Model> Doctors = Model.Doctor.All();
+        List<Model.Model> Students = Model.Student.All();
+        Random rand = new Random();
+        for(int i=0; i<count; i++){
+            Model.Doctor doctor = (Model.Doctor) Doctors.get(rand.nextInt(Doctors.size()));
+            Model.Student student = (Model.Student) Students.get(rand.nextInt(Students.size()));
+            Model.Visit visit = new Model.Visit(student.ID, doctor.ID);
+            visit.save();
+        }
     }
 }
