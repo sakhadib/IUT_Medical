@@ -94,6 +94,6 @@ public class TestController extends Controller{
             test.save();
         }
 
-        System.out.println("--- Tests populated successfully ---");
+        System.out.println("\n--- Tests populated successfully ---\n");
     }
 }

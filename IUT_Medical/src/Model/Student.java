@@ -78,7 +78,7 @@ public class Student implements Model{
     }
 
     public void printSignature(){
-        String S = "ID\t\t\tName\t\t\tDept\tEmail\n";
+        String S = "ID\t\t\tName\t\t\t\t\tDept\tEmail\n";
         System.out.println(S);
     }
 
@@ -92,6 +92,6 @@ public class Student implements Model{
     }
 
     public String toString(){
-        return this.ID + "\t" + this.name + "\t" + this.Dept + "\t\t" + this.email;
+        return this.ID + "\t" + this.name + "\t\t\t" + this.Dept + "\t\t" + this.email;
     }
 }

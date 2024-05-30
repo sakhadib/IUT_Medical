@@ -86,7 +86,7 @@ public class BillController extends Controller {
             bill.save();
 
         }
-        System.out.println("--- Bills populated successfully ---");
+        System.out.println("\n--- Bills populated successfully ---\n");
     }
 }
 

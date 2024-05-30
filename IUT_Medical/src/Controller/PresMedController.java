@@ -103,6 +103,6 @@ public class PresMedController extends Controller{
             pm.save();
         }
 
-        System.out.println("--- PrescriptionMedicines populated successfully ---");
+        System.out.println("\n--- PrescriptionMedicines populated successfully ---\n");
     }
 }

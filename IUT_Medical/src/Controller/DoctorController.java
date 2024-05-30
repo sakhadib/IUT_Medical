@@ -69,5 +69,7 @@ public class DoctorController extends Controller{
             Model.Doctor doctor = new Model.Doctor(names.get(i), emails.get(i), specializations.get(i));
             doctor.save();
         }
+
+        System.out.println("\n--- Doctors populated successfully ---\n");
     }
 }
