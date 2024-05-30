@@ -18,23 +18,23 @@ public class BillController extends Controller {
     }
 
     public void details() {
-//        System.out.println("Which Details do you want to see?(student/doctor)");
-//        Scanner sc = new Scanner(System.in);
-//        String detailsType = sc.nextLine();
-//        if(detailsType.equals("student")){
-//            System.out.println("Enter the Student ID:");
-//            int referralID = sc.nextInt();
-//            show(Model.Bill.ShowByStudent(referralID));
-//        }
-//        else if(detailsType.equals("doctor")){
-//            System.out.println("Enter the Doctor ID:");
-//            int doctorID = sc.nextInt();
-//            show(Model.Bill.ShowByDoctor(doctorID));
-//        }
-//        else {
-//            System.out.println("Invalid details type");
-//        }
-//
+        System.out.println("Which Details do you want to see?(student/doctor)");
+        Scanner sc = new Scanner(System.in);
+        String detailsType = sc.nextLine();
+        if(detailsType.equals("student")){
+            System.out.println("Enter the Student ID:");
+            String StudentID = sc.nextLine();
+            show(Model.Bill.showByStudent(StudentID));
+        }
+        else if(detailsType.equals("doctor")){
+            System.out.println("Enter the Doctor ID:");
+            String doctorID = sc.nextLine();
+            show(Model.Bill.showByDoctor(doctorID));
+        }
+        else {
+            System.out.println("Invalid details type");
+        }
+
     }
 
     public void update() {
@@ -80,9 +80,9 @@ public class BillController extends Controller {
         Random rand = new Random();
 
         for (int i = 0; i < count; i++) {
-
+            Model.Referral referral = (Model.Referral) Referrals.get(rand.nextInt(Referrals.size()));
             int amount = rand.nextInt(1000);
-            Model.Bill bill = new Model.Bill(rand.nextInt(Referrals.size()), amount);
+            Model.Bill bill = new Model.Bill(referral.ID, amount);
             bill.save();
 
         }

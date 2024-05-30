@@ -73,7 +73,7 @@ public class ReferralController extends Controller{
         Random rand = new Random();
 
         for (int i = 0; i < count; i++) {
-            Model.Referral referral = new Model.Referral(rand.nextInt(Visits.size()), "Details");
+            Model.Referral referral = new Model.Referral(rand.nextInt(Visits.size()), "Random Details");
             referral.save();
         }
         System.out.println("--- Referrals populated successfully ---");

@@ -299,7 +299,15 @@ public class Main {
                     else if (commands.equals("detailed_Referral")) {
                         controller = new ReferralController();
                         controller.details();
-                    } else if (commands.equals("back")) {
+                    }
+
+                    //Show all bills
+                    else if (commands.equals("bills")) {
+                        controller = new BillController();
+                        controller.show(Model.Bill.All());
+                    }
+
+                    else if (commands.equals("back")) {
                         break;
                     }
                     else{
