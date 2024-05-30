@@ -1,6 +1,10 @@
 package Controller;
 
+import Utility.TestHelper;
+
 import java.util.List;
+import java.util.Map;
+import java.util.Random;
 import java.util.Scanner;
 
 public class TestController extends Controller{
@@ -72,5 +76,24 @@ public class TestController extends Controller{
         test.delete();
 
         System.out.println("--- Test deleted successfully ---");
+    }
+
+    public void populate(int count){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of tests to populate:");
+        count = sc.nextInt();
+
+        List<String> testNames = TestHelper.getRandomNames(count);
+
+        for(int i=0; i<count; i++){
+            Random rand = new Random();
+            int price = rand.nextInt(1000);
+            Boolean available = rand.nextBoolean();
+
+            Model.Test test = new Model.Test(testNames.get(i), price, available);
+            test.save();
+        }
+
+        System.out.println("--- Tests populated successfully ---");
     }
 }
