@@ -36,7 +36,7 @@ public class Test implements Model{
     }
 
     public void update() {
-        String Query = "UPDATE TEST SET NAME = '" + this.name + "', PRICE = " + this.price + ", AVAILABLITY = " + this.Availablity + " WHERE ID = " + this.ID;
+        String Query = "UPDATE TEST SET NAME = '" + this.name + "', PRICE = " + this.price + ", AVAILABILITY = " + this.Availablity + " WHERE ID = " + this.ID;
         try {
             DB.Conn.Execute(Query);
         } catch (Exception e) {
@@ -62,7 +62,7 @@ public class Test implements Model{
                 this.ID = result.getInt("ID");
                 this.name = result.getString("NAME");
                 this.price = result.getInt("PRICE");
-                this.Availablity = result.getInt("AVAILABLITY");
+                this.Availablity = result.getInt("Availability");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -90,7 +90,7 @@ public class Test implements Model{
     }
 
     public String toString(){
-        if(this.Availablity){
+        if(this.Availablity == 1){
             return this.ID + "\t" + this.name + "\t" + this.price + "\t" + "Available";
         }
         else{
