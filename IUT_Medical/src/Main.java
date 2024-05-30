@@ -56,7 +56,21 @@ public class Main {
                     else if (commands.equals("visit")) {
                         controller = new VisitController();
                         controller.create();
-                    } else if (commands.equals("back")) {
+                    }
+
+                    //Create a new prescription
+                    else if (commands.equals("presmed")) {
+                        controller = new PresMedController();
+                        controller.create();
+                    }
+
+                    //Create a new prescription test
+                    else if (commands.equals("prestest")) {
+                        controller = new PresTestController();
+                        controller.create();
+                    }
+
+                    else if (commands.equals("back")) {
                         break;
                     }
 
@@ -292,9 +306,13 @@ public class Main {
                     if (commands.equals("students")) {
                         StudentController sc1 = new StudentController();
                         sc1.populate();
-                    } else if (commands.equals("doctors")) {
+                    }
+                    else if (commands.equals("doctors")) {
                         DoctorController dc1 = new DoctorController();
                         dc1.populate();
+                    } else if (commands.equals("medicines")) {
+                        MedicineController mc1 = new MedicineController();
+                        mc1.populate();
                     }
                     break;
                 }
