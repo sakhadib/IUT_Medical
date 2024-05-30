@@ -84,14 +84,7 @@ public class Student implements Model{
         System.out.println(S);
     }
 
-    public void export(){
-        String Query = "SELECT generate_student_report ('" + this.ID + "') FROM DUAL";
-        try {
-            DB.Conn.Execute(Query);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+
 
     public String toString(){
         return this.ID + "\t" + this.name + "\t\t\t" + this.Dept + "\t\t" + this.email;

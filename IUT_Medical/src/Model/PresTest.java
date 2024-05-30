@@ -146,7 +146,7 @@ public class PresTest implements Model {
     }
 
     public String toString() {
-        return this.ID + "\t" + this.visit.ID + this.visit.student.ID+ "\t" + this.test.ID;
+        return this.ID + "\t" + this.visit.ID + "\t" + this.visit.student.ID+ "\t" + this.test.ID;
     }
 
 

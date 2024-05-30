@@ -66,15 +66,6 @@ public class StudentController extends Controller{
         System.out.println("--- Student deleted successfully ---\n\n");
     }
 
-    public void export(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the Student ID:");
-        String studentID = sc.nextLine();
-        Model.Student student = new Model.Student(studentID);
-        student.export();
-        System.out.println("--- Student exported successfully ---\n\n");
-    }
-
 
     public void populate(){
         Scanner sc = new Scanner(System.in);
