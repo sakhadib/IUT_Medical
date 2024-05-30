@@ -296,6 +296,11 @@ public class Main {
                         DoctorController dc1 = new DoctorController();
                         dc1.populate();
                     }
+                    else if (commands.equals("medicines")) {
+                        MedicineController mc1 = new MedicineController();
+                        mc1.populate();
+                    }
+
                     break;
                 }
 
