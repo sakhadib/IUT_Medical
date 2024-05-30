@@ -1,0 +1,16 @@
+Student ID: 240061102
+Student Name: Arif Biswas
+Student Email: arifbiswas@iut-dhaka.edu
+Department: BTM
+
+
+Detailed Report:
+Visit ID: 1
+Doctor ID: DOC-2413
+Doctor Name: Dr. Yuvraj Sengupta
+Visit Date: null
+
+Prescribed Medicines: 
+Napa
+
+
