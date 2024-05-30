@@ -180,14 +180,67 @@
 
 
 
-Drop sequence doctor_id_seq;
-CREATE SEQUENCE doctor_id_seq START WITH 1 INCREMENT BY 1 MAXVALUE 99 CYCLE NOCACHE;
+-- Drop sequence doctor_id_seq;
+-- CREATE SEQUENCE doctor_id_seq START WITH 1 INCREMENT BY 1 MAXVALUE 99 CYCLE NOCACHE;
+--
+-- CREATE OR REPLACE TRIGGER doctor_id_trigger
+-- BEFORE INSERT ON Doctor
+-- FOR EACH ROW
+-- BEGIN
+--   :NEW.ID := 'DOC-' || TO_CHAR(SYSDATE, 'YY') || LPAD(doctor_id_seq.NEXTVAL, 2, '0');
+-- END;
+-- /
 
-CREATE OR REPLACE TRIGGER doctor_id_trigger
-BEFORE INSERT ON Doctor
-FOR EACH ROW
-BEGIN
-  :NEW.ID := 'DOC-' || TO_CHAR(SYSDATE, 'YY') || LPAD(doctor_id_seq.NEXTVAL, 2, '0');
-END;
-/
+
+-- CREATE OR REPLACE FUNCTION get_visit_count(student_id VARCHAR2)
+-- RETURN NUMBER IS
+--     visit_count NUMBER := 0;
+-- BEGIN
+--     SELECT COUNT(*)
+--     INTO visit_count
+--     FROM Visit
+--     WHERE StudentID = student_id;
+--
+--     RETURN visit_count;
+-- END;
+-- /
+
+
+-- CREATE OR REPLACE FUNCTION get_total_bills_by_month(month_number NUMBER)
+-- RETURN NUMBER IS
+--   total_amount NUMBER := 0;
+-- BEGIN
+-- SELECT SUM(amount)
+-- INTO total_amount
+-- FROM Bill b
+--          JOIN Referral r ON b.RefID = r.ID
+--          JOIN Visit v ON r.VisitID = v.ID
+-- WHERE MONTH(visit_time) = month_number;
+--
+-- RETURN total_amount;
+-- END;
+-- /
+--
+-- CREATE OR REPLACE FUNCTION get_student_total_bill(student_id VARCHAR2)
+-- RETURN NUMBER IS
+--   total_amount NUMBER := 0;
+-- BEGIN
+-- SELECT SUM(b.amount)
+-- INTO total_amount
+-- FROM Bill b
+--          JOIN Referral r ON b.RefID = r.ID
+--          JOIN Visit v ON r.VisitID = v.ID
+-- WHERE v.StudentID = student_id;
+--
+-- RETURN total_amount;
+-- END;
+-- /
+
+
+
+
+
+
+
+
 

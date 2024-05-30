@@ -81,6 +81,12 @@ public class Medicine implements Model {
         return Medicines;
     }
 
+    public static void stock(int medID, int quantity){
+        Medicine m = new Medicine(medID);
+        m.quantity += quantity;
+        m.update();
+    }
+
     public void printSignature(){
         String s = "ID\tName\tGeneric\tCompany\tQuantity\n";
         System.out.println(s);

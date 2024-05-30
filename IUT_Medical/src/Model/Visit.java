@@ -11,6 +11,7 @@ public class Visit implements Model{
     public Doctor doctor;
     public String date;
 
+
     public Visit(String studentID, String doctorID) {
         this.student = new Student(studentID);
         this.doctor = new Doctor(doctorID);
