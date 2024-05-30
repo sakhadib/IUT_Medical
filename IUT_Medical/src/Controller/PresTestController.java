@@ -87,11 +87,15 @@ public class PresTestController extends Controller{
     }
 
     public void popolate(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of PrescriptionTests to populate:");
+        int n = sc.nextInt();
+
         List<Model.Model> visits = Model.Visit.All();
         List<Model.Model> tests = Model.Test.All();
         Random rand = new Random();
 
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < n; i++){
             Model.PresTest pt = new Model.PresTest(rand.nextInt(visits.size()), rand.nextInt(tests.size()));
             pt.save();
         }
