@@ -341,7 +341,13 @@ public class Main {
                         PresMedController pmc1 = new PresMedController();
                         pmc1.populate();
                     }
-                    else if (commands.equals("prestests")) {
+
+                    else if (commands.equals("prescriptions")) {
+                        PresMedController pmc1 = new PresMedController();
+                        pmc1.populate();
+                    }
+                    else if (commands.equals("prescribed_tests")) {
+
                         PresTestController ptc1 = new PresTestController();
                         ptc1.populate();
                     }
@@ -356,7 +362,6 @@ public class Main {
                     else if (commands.equals("back")) {
                         break;
                     }
-
                     else{
                         System.out.println("Invalid command! Please see the help menu and provide a valid command.");
                     }
