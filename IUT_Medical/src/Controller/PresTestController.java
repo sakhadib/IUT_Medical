@@ -86,7 +86,7 @@ public class PresTestController extends Controller{
         System.out.println("--- PrescriptionTest deleted successfully ---");
     }
 
-    public void popolate(){
+    public void populate(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of PrescriptionTests to populate:");
         int n = sc.nextInt();

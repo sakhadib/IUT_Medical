@@ -323,15 +323,38 @@ public class Main {
                     else if (commands.equals("doctors")) {
                         DoctorController dc1 = new DoctorController();
                         dc1.populate();
-                    } else if (commands.equals("medicines")) {
-                        MedicineController mc1 = new MedicineController();
-                        mc1.populate();
                     }
                     else if (commands.equals("medicines")) {
                         MedicineController mc1 = new MedicineController();
                         mc1.populate();
                     }
-
+                    else if (commands.equals("tests")) {
+                        TestController tc1 = new TestController();
+                        tc1.populate();
+                    }
+                    else if (commands.equals("visits")) {
+                        VisitController vc1 = new VisitController();
+                        vc1.populate();
+                    }
+                    else if (commands.equals("prescriptions")) {
+                        PresMedController pmc1 = new PresMedController();
+                        pmc1.populate(6);
+                    }
+                    else if (commands.equals("prescribed_tests")) {
+                        PresTestController ptc1 = new PresTestController();
+                        ptc1.populate();
+                    }
+                    else if (commands.equals("referrals")) {
+                        ReferralController rc1 = new ReferralController();
+                        rc1.populate();
+                    }
+                    else if (commands.equals("bills")) {
+                        BillController bc1 = new BillController();
+                        bc1.populate();
+                    }
+                    else if (commands.equals("back")) {
+                        break;
+                    }
                     else{
                         System.out.println("Invalid command! Please see the help menu and provide a valid command.");
                     }
