@@ -1,6 +1,10 @@
 package Controller;
 
+import Model.PresTest;
+
 import java.sql.SQLOutput;
+import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class PresTestController extends Controller{
@@ -80,6 +84,19 @@ public class PresTestController extends Controller{
         pt.delete();
 
         System.out.println("--- PrescriptionTest deleted successfully ---");
+    }
+
+    public void popolate(){
+        List<Model.Model> visits = Model.Visit.All();
+        List<Model.Model> tests = Model.Test.All();
+        Random rand = new Random();
+
+        for(int i = 0; i < 10; i++){
+            Model.PresTest pt = new Model.PresTest(rand.nextInt(visits.size()), rand.nextInt(tests.size()));
+            pt.save();
+        }
+
+        System.out.println("--- PrescriptionTests populated successfully ---");
     }
 
 
