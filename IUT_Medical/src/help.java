@@ -78,13 +78,13 @@ public class help {
         System.out.println("Follow the instructions to populate the database:");
         System.out.println("01. Populate students: \t\t\tstudents");
         System.out.println("02. Populate doctors: \t\t\tdoctors");
-        System.out.println("03. Populate medicines: \t\t\tmedicines");
-        System.out.println("04. Populate tests: \t\t\t\ttests");
-        System.out.println("05. Populate visits: \t\t\t\tvisits");
-        System.out.println("06. Populate prescriptions: \t\tprescriptions");
+        System.out.println("03. Populate medicines: \t\tmedicines");
+        System.out.println("04. Populate tests: \t\t\ttests");
+        System.out.println("05. Populate visits: \t\t\tvisits");
+        System.out.println("06. Populate prescriptions: \tprescriptions");
         System.out.println("07. Populate prescribed tests: \tprescribed_tests");
-        System.out.println("08. Populate referrals: \t\t\treferrals");
-        System.out.println("09. Populate bills: \t\t\t\tbills");
+        System.out.println("08. Populate referrals: \t\treferrals");
+        System.out.println("09. Populate bills: \t\t\tbills");
         System.out.println("10. Go back: \t\t\t\t\tback");
         System.out.println("\n");
     }
