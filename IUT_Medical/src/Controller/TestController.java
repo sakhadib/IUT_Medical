@@ -78,10 +78,10 @@ public class TestController extends Controller{
         System.out.println("--- Test deleted successfully ---");
     }
 
-    public void populate(int count){
+    public void populate(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of tests to populate:");
-        count = sc.nextInt();
+        int count = sc.nextInt();
 
         List<String> testNames = TestHelper.getRandomNames(count);
 
