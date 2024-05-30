@@ -292,6 +292,9 @@ public class Main {
                     if (commands.equals("students")) {
                         StudentController sc1 = new StudentController();
                         sc1.populate();
+                    } else if (commands.equals("doctors")) {
+                        DoctorController dc1 = new DoctorController();
+                        dc1.populate();
                     }
                     break;
                 }

@@ -1,5 +1,7 @@
 package Controller;
 
+import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class PresMedController extends Controller{
@@ -83,4 +85,18 @@ public class PresMedController extends Controller{
         System.out.println("--- PrescriptionMedicine deleted successfully ---");
     }
 
+    public void populate(int count){
+        List<Model.Model> visits = Model.Visit.All();
+        List<Model.Model> medicines = Model.Medicine.All();
+        Random random = new Random();
+
+        for(int i=0; i<count; i++){
+            Model.Visit visit = (Model.Visit) visits.get(random.nextInt(visits.size()));
+            Model.Medicine medicine = (Model.Medicine) medicines.get(random.nextInt(medicines.size()));
+            int quantity = random.nextInt(10) + 1;
+
+            Model.PresMed pm = new Model.PresMed(visit.ID, medicine.ID, quantity);
+            pm.save();
+        }
+    }
 }
