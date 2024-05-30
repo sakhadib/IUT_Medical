@@ -1,107 +1,67 @@
 # Smart IUT Medical Center
 
 ## Abstract
-The proposed project aims to develop a robust medical center database system using Java, JDBC, and Oracle 11g. This system will streamline patient record management, appointment scheduling, and medical care processes. Leveraging GitHub for collaboration, Overleaf for documentation, and Google Meet/Discord for communication, the project ensures efficient teamwork. Key features include inventory management, prescription management, medical history, and billing processes integration for enhanced healthcare operations. Ultimately, this project seeks to elevate patient care standards and improve healthcare efficiency.
+IUT Medical Center is developed aiming a robust medical center database system using Java, JDBC, and Oracle 11g. This system streamlines patient record management, appointment scheduling, and medical care processes. Ultimately, this project seeks to elevate patient care standards and improve healthcare efficiency.
 
 ## Team
 **Voyager Team Members:**
-- **Adib Sakhawat**
-  - ID: 210042106
-  - BSC in Software Engineering
-  - Dept of Computer Science and Engineering
-- **Tahsin Islam**
-  - ID: 210042137
-  - BSC in Software Engineering
-  - Dept of Computer Science and Engineering
-- **Takia Farhin**
-  - ID: 210042117
-  - BSC in Software Engineering
-  - Dept of Computer Science and Engineering
-## Short Info
-**Project Name:** Smart IUT Medical Center  
-**Purpose:** Develop a medical center database system to enhance healthcare efficiency at the IUT Medical Center.  
-**Key Features:** Inventory management, prescription management, medical history, and billing integration..
+ 1. **Adib Sakhawat**<br/>
+ ID: 210042106<br/>
+ BSC in Software Engineering<br/>
+ Dept of Computer Science and Engineering<br/>
+ 
+ 2.  **Tahsin Islam**<br/>
+ ID: 210042137<br/>
+ BSC in Software Engineering<br/>
+ Dept of Computer Science and Engineering<br/>
+ 
+ 3. **Takia Farhin**<br/>
+ ID: 210042117<br/>
+ BSC in Software Engineering<br/>
+ Dept of Computer Science and Engineering<br/>
+  
+## Key Features
+Key features of this project are:
+ 1. Inventory Management
+ 2. Prescription Management
+ 3. Managing Medical History
+ 4. Billing Integration
+ 
 # Requirement Analysis
+### 1. Student Management: 
+- The system should be able to maintain a list of students, including their **ID**, **name**, **department**, and **email**.
+- Students should be uniquely identified by their **student ID**.
 
-## 1. User Roles:
-   - **Admin**: Responsible for managing all aspects of the system.
-   - **Doctor**: Can create, update, and delete visits, prescriptions, and tests.
-   - **Student**: Can create, update, and delete their own records.
-   
-## 2. Functionalities:
+### 2. Doctor Management:
+- The system should facilitate the management of doctors ,storing their **ID**, **name**, **specialization**, and **email**.
+- Doctors should be identifiable by their respective **IDs**.
 
-### Admin:
-   - **Manage Bills**:
-     - Create, update, delete bills.
-     - View bill details by student or doctor.
-     - Populate bills with random data.
-     
-   - **Manage Doctors**:
-     - Create, update, delete doctors.
-     - Populate doctors with random data.
-     
-   - **Manage Medicines**:
-     - Create, update, delete medicines.
-     - Populate medicines with random data.
-     
-   - **Manage Prescriptions**:
-     - Create, update, delete prescription medicines.
-     - View prescription details by medicine, doctor, student, or visit.
-     - Populate prescription medicines with random data.
-     
-   - **Manage Prescription Tests**:
-     - Create, update, delete prescription tests.
-     - View prescription test details by test, doctor, student, or visit.
-     - Populate prescription tests with random data.
-     
-   - **Manage Referrals**:
-     - Create, update, delete referrals.
-     - View referral details by visit.
-     - Populate referrals with random data.
-     
-   - **Manage Students**:
-     - Create, update, delete students.
-     - Export student records.
-     - Populate students with random data.
-     
-   - **Manage Tests**:
-     - Create, update, delete tests.
-     - Populate tests with random data.
-     
-   - **Manage Visits**:
-     - Create, update, delete visits.
-     - View visit details by doctor or student.
-     - Populate visits with random data.
+### 3. Visit Recording:
+- It should enable the recording of student visits to the medical center, capturing the **visit ID**, **student ID**, **doctor ID**, **visit date and time**.
+- Each visit should be identifiable by their respective **IDs**.
 
-### Doctor:
-   - **Manage Visits**:
-     - Create, update, delete visits for their own patients.
-     - View visit details for their own patients.
+### 4. Prescription Management:
+- It should support the creation and management of prescriptions, including comments from the attending doctor, prescription ID, and associated visit ID.
+- Each prescription should be linked to an attendance record. 6. 
 
-   - **Manage Prescriptions**:
-     - Create, update, delete prescriptions for their own patients.
-     - View prescription details for their own patients.
+### 5. Medicine Inventory:
+- The system should maintain an inventory of medicines available at the medical center, including details such as medicine ID, name, generic name, and producer.
+- – Medicine entries should be uniquely identified by their IDs. 
 
-   - **Manage Prescription Tests**:
-     - Create, update, delete prescription tests for their own patients.
-     - View prescription test details for their own patients.
+### 6. Test Availability:
+- It should provide information on available medical tests, storing details such as test ID, name, and fee. 
+- Tests should be uniquely identified by their IDs. 8. Prescribed 
 
-### Student:
-   - **Manage Own Details**:
-     - Create, update, delete their own records.
-     - Export their own record.
-     
-   - **View Visits**:
-     - View visit details for their own visits.
+### 7. Referral Management:
+- It should handle referrals made to external healthcare providers, storing details such as referral ID, comments, and associated visit ID.
+- Referrals should be linked to specific visits. 
 
-## 3. Additional Considerations:
-   - **Data Validation**: Ensure data integrity and validity throughout the system.
-   - **Security**: Implement authentication and authorization mechanisms to ensure data privacy and access control.
-   - **Error Handling**: Handle exceptions gracefully and provide meaningful error messages to users.
-   - **User Interface**: Develop a user-friendly interface for easy interaction with the system.
-   - **Scalability**: Design the system to handle a large volume of data and users efficiently.
-   - **Documentation**: Maintain comprehensive documentation for easy maintenance and future enhancements.
+### 8. Billing System: 
+- The system should manage the billing process for services rendered, including bills generated for referred prescriptions.
+- Billing records should include the referral ID and amount paid.
+
 # Database Design :
+
 ### Tables:
 
 1. **Doctor**:
@@ -163,6 +123,7 @@ The proposed project aims to develop a robust medical center database system usi
 - One referral belongs to one visit.
 - Each medicine can be prescribed multiple times.
 - Each test can be prescribed multiple times.
+
 
 
 ## Tools and Technology
