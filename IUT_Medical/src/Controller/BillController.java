@@ -65,4 +65,18 @@ public class BillController extends Controller{
 
         System.out.println("--- Bill deleted successfully ---");
     }
+
+    public void populate() {
+        List<Model.Bill> bills = Model.Bill.all();
+        if (bills.isEmpty()) {
+            System.out.println("No bills available.");
+        } else {
+            System.out.println("List of all bills:");
+            System.out.println("ID\tReferralID\tAmount");
+            for (Model.Bill bill : bills) {
+                System.out.println(bill);
+            }
+        }
+    }
+
 }
