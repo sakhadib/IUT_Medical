@@ -7,13 +7,18 @@ public class Test implements Model{
     public int ID;
     public String name;
     public int price;
-    public Boolean Availablity;
+    public int Availablity;
 
     public Test(String name, int price, Boolean Availablity) {
         this.ID = ID;
         this.name = name;
         this.price = price;
-        this.Availablity = Availablity;
+        if(Availablity){
+            this.Availablity = 1;
+        }
+        else{
+            this.Availablity = 0;
+        }
     }
 
     public Test(int ID) {
@@ -22,7 +27,7 @@ public class Test implements Model{
     }
 
     public void save() {
-        String Query = "INSERT INTO TEST(Name, Price, Availability) VALUES ('" + this.name + "', " + this.price + ", " + this.Availablity + ")";
+        String Query = "INSERT INTO TEST(ID, Name, Price, Availability) VALUES (" + 1 + ", '" + this.name + "', " + this.price + ", " + this.Availablity + ")";
         try {
             DB.Conn.Execute(Query);
         } catch (Exception e) {
@@ -57,7 +62,7 @@ public class Test implements Model{
                 this.ID = result.getInt("ID");
                 this.name = result.getString("NAME");
                 this.price = result.getInt("PRICE");
-                this.Availablity = result.getBoolean("AVAILABLITY");
+                this.Availablity = result.getInt("AVAILABLITY");
             }
         } catch (Exception e) {
             e.printStackTrace();

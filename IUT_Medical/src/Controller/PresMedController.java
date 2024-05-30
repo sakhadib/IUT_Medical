@@ -85,7 +85,11 @@ public class PresMedController extends Controller{
         System.out.println("--- PrescriptionMedicine deleted successfully ---");
     }
 
-    public void populate(int count){
+    public void populate(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of PrescriptionMedicines to populate:");
+        int count = sc.nextInt();
+
         List<Model.Model> visits = Model.Visit.All();
         List<Model.Model> medicines = Model.Medicine.All();
         Random random = new Random();

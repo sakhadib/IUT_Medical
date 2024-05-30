@@ -19,7 +19,7 @@ public class Bill implements Model{
     }
 
     public void save() {
-        String Query = "INSERT INTO BILL(ReferralID, Amount) VALUES (" + this.referral.ID + ", " + this.Amount + ")";
+        String Query = "INSERT INTO BILL VALUES (" + 1 + ", " + this.referral.ID + ", " + this.Amount + ")";
         try {
             DB.Conn.Execute(Query);
         } catch (Exception e) {

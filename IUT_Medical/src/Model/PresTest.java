@@ -18,7 +18,7 @@ public class PresTest implements Model {
     }
 
     public void save() {
-        String Query = "INSERT INTO PRESTEST(VisitID, TestID) VALUES (" + this.visit.ID + ", " + this.test.ID + ")";
+        String Query = "INSERT INTO PRESTEST VALUES (" + 1 + ", " + this.visit.ID + ", " + this.test.ID + ")";
         try {
             DB.Conn.Execute(Query);
         } catch (Exception e) {
