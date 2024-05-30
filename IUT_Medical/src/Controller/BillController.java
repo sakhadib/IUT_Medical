@@ -1,8 +1,12 @@
 package Controller;
+
+
+
+import java.util.Random;
 import java.util.Scanner;
 import java.util.List;
 
-public class BillController extends Controller{
+public class BillController extends Controller {
     public void create() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the referral ID:");
@@ -13,7 +17,7 @@ public class BillController extends Controller{
         bill.save();
     }
 
-    public void details(){
+    public void details() {
 //        System.out.println("Which Details do you want to see?(student/doctor)");
 //        Scanner sc = new Scanner(System.in);
 //        String detailsType = sc.nextLine();
@@ -33,7 +37,7 @@ public class BillController extends Controller{
 //
     }
 
-    public void update(){
+    public void update() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the Bill ID:");
         int billID = sc.nextInt();
@@ -55,7 +59,7 @@ public class BillController extends Controller{
         System.out.println("--- Bill updated successfully ---");
     }
 
-    public void delete(){
+    public void delete() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the Bill ID:");
         int billID = sc.nextInt();
@@ -66,4 +70,23 @@ public class BillController extends Controller{
         System.out.println("--- Bill deleted successfully ---");
     }
 
+
+    public void populate() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of bills to populate:");
+        int count = sc.nextInt();
+        List<Model.Model> Referrals = Model.Referral.All();
+
+        Random rand = new Random();
+
+        for (int i = 0; i < count; i++) {
+
+            int amount = rand.nextInt(1000);
+            Model.Bill bill = new Model.Bill(rand.nextInt(Referrals.size()), amount);
+            bill.save();
+
+        }
+        System.out.println("--- Bills populated successfully ---");
+    }
 }
+

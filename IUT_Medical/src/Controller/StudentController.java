@@ -63,7 +63,16 @@ public class StudentController extends Controller{
         Model.Student student = new Model.Student(studentID);
         student.delete();
 
-        System.out.println("--- Student deleted successfully ---");
+        System.out.println("--- Student deleted successfully ---\n\n");
+    }
+
+    public void export(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Student ID:");
+        String studentID = sc.nextLine();
+        Model.Student student = new Model.Student(studentID);
+        student.export();
+        System.out.println("--- Student exported successfully ---\n\n");
     }
 
 

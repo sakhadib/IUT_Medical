@@ -19,7 +19,9 @@ public class help {
         System.out.println("03. Add a medicine: medicine");
         System.out.println("04. Create a test: \ttest");
         System.out.println("05. Create a visit: visit");
-        System.out.println("06. Go back: \t\tback");
+        System.out.println("06. Suggest Medicine: presmed");
+        System.out.println("07. Suggest Test: \tprestest");
+        System.out.println("08. Go back: \t\tback");
         System.out.println("\n");
     }
 
