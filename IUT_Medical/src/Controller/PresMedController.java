@@ -98,5 +98,7 @@ public class PresMedController extends Controller{
             Model.PresMed pm = new Model.PresMed(visit.ID, medicine.ID, quantity);
             pm.save();
         }
+
+        System.out.println("--- PrescriptionMedicines populated successfully ---");
     }
 }
