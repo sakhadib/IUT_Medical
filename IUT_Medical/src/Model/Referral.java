@@ -19,7 +19,7 @@ public class Referral implements Model{
     }
 
     public void save() {
-        String Query = "INSERT INTO REFERRAL(VisitID, Details) VALUES (" + 1 + ", " + this.visit.ID + ", '" + this.Details + "')";
+        String Query = "INSERT INTO REFERRAL VALUES (" + 1 + ", " + this.visit.ID + ", '" + this.Details + "')";
         try {
             DB.Conn.Execute(Query);
         } catch (Exception e) {

@@ -52,7 +52,7 @@ public class Bill implements Model{
             java.sql.ResultSet result = DB.Conn.Exedute(Query);
             if (result.next()) {
                 this.ID = result.getInt("ID");
-                this.referral = new Referral(result.getInt("ReferralID"));
+                this.referral = new Referral(result.getInt("RefID"));
                 this.Amount = result.getInt("Amount");
             }
         } catch (Exception e) {
@@ -60,8 +60,8 @@ public class Bill implements Model{
         }
     }
 
-    public static List<Bill> all() {
-        List<Bill> bills = new ArrayList<Bill>();
+    public static List<Model> All() {
+        List<Model> bills = new ArrayList<>();
         String Query = "SELECT * FROM BILL";
         try {
             java.sql.ResultSet result = DB.Conn.Exedute(Query);
@@ -72,6 +72,38 @@ public class Bill implements Model{
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return bills;
+    }
+
+    public static List<Model> showByStudent(String StudentID){
+        List<Model> bills = new ArrayList<Model>();
+        String Query = "SELECT * FROM BILL WHERE ID IN (SELECT ID FROM REFERRAL WHERE VisitID IN (SELECT ID FROM VISIT WHERE StudentID = '" + StudentID + "'))";
+        try {
+            java.sql.ResultSet result = DB.Conn.Exedute(Query);
+            while (result.next()) {
+                Bill bill = new Bill(result.getInt("ID"));
+                bills.add(bill);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return bills;
+    }
+
+    public static List<Model> showByDoctor(String DoctorID) {
+        List<Model> bills = new ArrayList<Model>();
+        String Query = "SELECT * FROM BILL WHERE ID IN (SELECT ID FROM REFERRAL WHERE VisitID IN (SELECT ID FROM VISIT WHERE DoctorID = '" + DoctorID + "'))";
+        try {
+            java.sql.ResultSet result = DB.Conn.Exedute(Query);
+            while (result.next()) {
+                Bill bill = new Bill(result.getInt("ID"));
+                bills.add(bill);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         return bills;
     }
 

@@ -1,5 +1,4 @@
 package Controller;
-
 import Model.PresTest;
 
 import java.sql.SQLOutput;
@@ -96,7 +95,9 @@ public class PresTestController extends Controller{
         Random rand = new Random();
 
         for(int i = 0; i < n; i++){
-            Model.PresTest pt = new Model.PresTest(rand.nextInt(visits.size()), rand.nextInt(tests.size()));
+            Model.Visit visit = (Model.Visit)visits.get(rand.nextInt(visits.size()));
+            Model.Test test = (Model.Test)tests.get(rand.nextInt(tests.size()));
+            Model.PresTest pt = new Model.PresTest(visit.ID, test.ID);
             pt.save();
         }
 

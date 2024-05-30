@@ -59,10 +59,10 @@ public class Test implements Model{
         try {
             java.sql.ResultSet result = DB.Conn.Exedute(Query);
             if (result.next()) {
-                this.ID = result.getInt("ID");
-                this.name = result.getString("NAME");
-                this.price = result.getInt("PRICE");
-                this.Availablity = result.getInt("Availability");
+                this.ID = result.getInt(1);
+                this.name = result.getString(2);
+                this.price = result.getInt(3);
+                this.Availablity = result.getInt(4);
             }
         } catch (Exception e) {
             e.printStackTrace();
