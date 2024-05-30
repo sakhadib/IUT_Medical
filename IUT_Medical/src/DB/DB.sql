@@ -11,7 +11,7 @@ DROP TABLE Doctor;
 
 CREATE TABLE Student (
                          ID VARCHAR2(10),
-                         Name VARCHAR2(30),
+                         Name VARCHAR2(100),
                          Department VARCHAR2(10),
                          email VARCHAR2(255),
                          PRIMARY KEY (ID)
@@ -27,16 +27,16 @@ CREATE TABLE Doctor (
 
 CREATE TABLE Medicine (
                           ID NUMBER,
-                          Name VARCHAR2(30),
-                          Generic VARCHAR2(30),
-                          Company VARCHAR2(50),
+                          Name VARCHAR2(100),
+                          Generic VARCHAR2(100),
+                          Company VARCHAR2(100),
                           Quantity NUMBER,
                           PRIMARY KEY (ID)
 );
 
 CREATE TABLE Test (
                       ID NUMBER,
-                      Name VARCHAR2(30),
+                      Name VARCHAR2(100),
                       Price VARCHAR2(30),
                       Availability NUMBER(1),
                       PRIMARY KEY (ID)

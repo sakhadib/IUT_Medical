@@ -21,7 +21,9 @@ public class help {
         System.out.println("05. Create a visit: \tvisit");
         System.out.println("06. Suggest Medicine: \tpresmed");
         System.out.println("07. Suggest Test: \t\tprestest");
-        System.out.println("08. Go back: \t\t\tback");
+        System.out.println("08. Refer a patient: \treferral");
+        System.out.println("09. Create a bill: \tbill");
+        System.out.println("10. Go back: \t\t\tback");
         System.out.println("\n");
     }
 
@@ -83,13 +85,6 @@ public class help {
         System.out.println("05. Populate visits: \t\t\tvisits");
         System.out.println("06. Populate prescriptions: \tpresmeds");
         System.out.println("07. Populate prescribed tests: \tprestests");
-        System.out.println("08. Populate referrals: \t\treferrals");
-        System.out.println("09. Populate bills: \t\t\tbills");
-        System.out.println("03. Populate medicines: \t\tmedicines");
-        System.out.println("04. Populate tests: \t\t\ttests");
-        System.out.println("05. Populate visits: \t\t\tvisits");
-        System.out.println("06. Populate prescriptions: \tprescriptions");
-        System.out.println("07. Populate prescribed tests: \tprescribed_tests");
         System.out.println("08. Populate referrals: \t\treferrals");
         System.out.println("09. Populate bills: \t\t\tbills");
         System.out.println("10. Go back: \t\t\t\t\tback");
