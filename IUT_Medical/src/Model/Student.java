@@ -29,7 +29,7 @@ public class Student implements Model{
     }
 
     public void update() {
-        String Query = "UPDATE STUDENT SET NAME = '" + this.name + "', DEPT = '" + this.Dept + "', EMAIL = '" + this.email + "' WHERE ID = '" + this.ID + "'";
+        String Query = "UPDATE STUDENT SET NAME = '" + this.name + "', Department = '" + this.Dept + "', EMAIL = '" + this.email + "' WHERE ID = '" + this.ID + "'";
         try {
             DB.Conn.Execute(Query);
         } catch (Exception e) {
@@ -60,6 +60,7 @@ public class Student implements Model{
         } catch (Exception e) {
             e.printStackTrace();
         }
+        DB.Conn.close();
     }
 
     public static List<Model> All() {
@@ -74,6 +75,7 @@ public class Student implements Model{
         } catch (Exception e) {
             e.printStackTrace();
         }
+        DB.Conn.close();
         return students;
     }
 

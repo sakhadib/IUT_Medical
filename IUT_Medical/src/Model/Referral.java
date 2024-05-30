@@ -58,6 +58,7 @@ public class Referral implements Model{
         } catch (Exception e) {
             e.printStackTrace();
         }
+        DB.Conn.close();
     }
 
     public static List<Model> All() {
@@ -71,6 +72,7 @@ public class Referral implements Model{
         } catch (Exception e) {
             e.printStackTrace();
         }
+        DB.Conn.close();
         return referrals;
     }
 
@@ -85,6 +87,7 @@ public class Referral implements Model{
         } catch (Exception e) {
             e.printStackTrace();
         }
+        DB.Conn.close();
         return referrals;
     }
 

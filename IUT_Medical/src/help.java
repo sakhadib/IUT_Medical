@@ -3,7 +3,7 @@ public class help {
 
 
     public static void help(){
-        System.out.println("Follow the instructions to use the program:");
+        System.out.println("\n\nFollow the instructions to use the program:");
         System.out.println("01. Create a new object: \tcreate");
         System.out.println("02. Update an object: \t\tupdate");
         System.out.println("03. Delete an object: \t\tdelete");
@@ -13,7 +13,7 @@ public class help {
         System.out.println("\n");
     }
     public static void help_create(){
-        System.out.println("Follow the instructions to create a new object:");
+        System.out.println("\n\nFollow the instructions to create a new object:");
         System.out.println("01. Add a student: \t\tstudent");
         System.out.println("02. Add a doctor: \t\tdoctor");
         System.out.println("03. Add a medicine: \tmedicine");
@@ -28,7 +28,7 @@ public class help {
     }
 
     public static void help_update(){
-        System.out.println("Follow the instructions to update an object:");
+        System.out.println("\n\nFollow the instructions to update an object:");
         System.out.println("01. Update a student: \t\t\tstudent");
         System.out.println("02. Update a doctor: \t\t\tdoctor");
         System.out.println("03. Update a medicine: \t\t\tmedicine");
@@ -43,7 +43,7 @@ public class help {
     }
 
     public static void help_delete(){
-        System.out.println("Follow the instructions to delete an object:");
+        System.out.println("\n\nFollow the instructions to delete an object:");
         System.out.println("01. Delete a student: \t\t\tstudent");
         System.out.println("02. Delete a doctor: \t\t\tdoctor");
         System.out.println("03. Delete a medicine: \t\t\tmedicine");
@@ -58,7 +58,7 @@ public class help {
     }
 
     public static void help_show(){
-        System.out.println("Follow the instructions to show objects:");
+        System.out.println("\n\nFollow the instructions to show objects:");
         System.out.println("01. Show students: \t\t\t\t\t\tstudents");
         System.out.println("02. Show doctors: \t\t\t\t\t\tdoctors");
         System.out.println("03. Show medicines: \t\t\t\t\tmedicines");
@@ -77,7 +77,7 @@ public class help {
     }
 
     public static void help_populate(){
-        System.out.println("Follow the instructions to populate the database:");
+        System.out.println("\n\nFollow the instructions to populate the database:");
         System.out.println("01. Populate students: \t\t\tstudents");
         System.out.println("02. Populate doctors: \t\t\tdoctors");
         System.out.println("03. Populate medicines: \t\tmedicines");

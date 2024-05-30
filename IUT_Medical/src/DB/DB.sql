@@ -46,7 +46,7 @@ CREATE TABLE Visit (
                        ID NUMBER,
                        StudentID VARCHAR2(10),
                        DoctorID VARCHAR2(10),
-                       VisitTime TIMESTAMP,
+                       VisitTime DATE,
                        PRIMARY KEY (ID),
                        CONSTRAINT FK_Visit_DoctorID
                            FOREIGN KEY (DoctorID)

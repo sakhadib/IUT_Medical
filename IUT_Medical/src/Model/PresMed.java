@@ -61,6 +61,7 @@ public class PresMed implements Model{
         } catch (Exception e) {
             e.printStackTrace();
         }
+        DB.Conn.close();
     }
 
     public static List<Model> All() {
@@ -90,6 +91,7 @@ public class PresMed implements Model{
         } catch (Exception e) {
             e.printStackTrace();
         }
+        DB.Conn.close();
         return presMeds;
     }
 
@@ -105,6 +107,7 @@ public class PresMed implements Model{
         } catch (Exception e) {
             e.printStackTrace();
         }
+        DB.Conn.close();
         return presMeds;
     }
 
@@ -120,6 +123,7 @@ public class PresMed implements Model{
         } catch (Exception e) {
             e.printStackTrace();
         }
+        DB.Conn.close();
         return presMeds;
     }
 
@@ -135,6 +139,7 @@ public class PresMed implements Model{
         } catch (Exception e) {
             e.printStackTrace();
         }
+        DB.Conn.close();
         return presMeds;
     }
 

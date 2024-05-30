@@ -89,9 +89,16 @@ CREATE OR REPLACE TRIGGER visit_id_trigger
 BEFORE INSERT ON Visit
 FOR EACH ROW
 BEGIN
-    SELECT visit_id_seq.nextval INTO :new.ID FROM dual;
+    -- Set the new ID using the sequence
+SELECT visit_id_seq.nextval INTO :new.ID FROM dual;
+
+-- Set the current date for the VisitTime
+:new.VisitTime := SYSDATE;
+
 END;
 /
+
+
 
 
 -- Create sequence for Test table ID

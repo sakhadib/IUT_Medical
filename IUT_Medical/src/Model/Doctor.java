@@ -61,6 +61,7 @@ public class Doctor implements Model{
         } catch (Exception e) {
             e.printStackTrace();
         }
+        DB.Conn.close();
     }
 
     public static List<Model> All() {
@@ -75,6 +76,7 @@ public class Doctor implements Model{
         } catch (Exception e) {
             e.printStackTrace();
         }
+        DB.Conn.close();
         return Doctors;
     }
 

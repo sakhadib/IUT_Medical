@@ -58,6 +58,7 @@ public class Bill implements Model{
         } catch (Exception e) {
             e.printStackTrace();
         }
+        DB.Conn.close();
     }
 
     public static List<Model> All() {
@@ -72,6 +73,7 @@ public class Bill implements Model{
         } catch (Exception e) {
             e.printStackTrace();
         }
+        DB.Conn.close();
         return bills;
     }
 
@@ -87,7 +89,7 @@ public class Bill implements Model{
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        DB.Conn.close();
         return bills;
     }
 
@@ -103,7 +105,7 @@ public class Bill implements Model{
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        DB.Conn.close();
         return bills;
     }
 

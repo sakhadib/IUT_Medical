@@ -23,7 +23,10 @@ public class Visit implements Model{
     }
 
     public void save() {
-        String Query = "INSERT INTO VISIT(StudentID, DoctorID) VALUES ('" + this.student.ID + "', '" + this.doctor.ID + "')";
+        String Query = "INSERT INTO VISIT (ID, StudentID, DoctorID, VisitTime) VALUES ("
+                + 1 + ", '"
+                + this.student.ID + "', '"
+                + this.doctor.ID + "', SYSDATE)";
         try {
             DB.Conn.Execute(Query);
         } catch (Exception e) {
@@ -63,6 +66,7 @@ public class Visit implements Model{
         } catch (Exception e) {
             e.printStackTrace();
         }
+        DB.Conn.close();
     }
 
     public static List<Model> All() {
@@ -77,6 +81,7 @@ public class Visit implements Model{
         } catch (Exception e) {
             e.printStackTrace();
         }
+        DB.Conn.close();
         return visits;
     }
 
@@ -92,6 +97,7 @@ public class Visit implements Model{
         } catch (Exception e) {
             e.printStackTrace();
         }
+        DB.Conn.close();
         return visits;
     }
 
@@ -107,6 +113,7 @@ public class Visit implements Model{
         } catch (Exception e) {
             e.printStackTrace();
         }
+        DB.Conn.close();
         return visits;
     }
 
@@ -116,6 +123,6 @@ public class Visit implements Model{
     }
 
     public String toString(){
-        return this.ID + "\t" + this.student.ID + "\t" + this.doctor.ID + "\t\t" + this.date;
+        return this.ID + "\t" + this.student.ID + "\t" + this.doctor.ID + "\t" + this.date;
     }
 }

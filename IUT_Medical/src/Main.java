@@ -7,6 +7,7 @@ import java.sql.SQLException;
 public class Main {
 
     public static void main(String[] args) {
+        Utility.Stat.generateStudentReport();
         System.out.println("\n");
 
         System.out.println("Welcome to the IUT Medical Center");

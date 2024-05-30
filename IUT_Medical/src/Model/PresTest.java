@@ -57,6 +57,7 @@ public class PresTest implements Model {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        DB.Conn.close();
     }
 
     public static List<Model> All() {
@@ -71,6 +72,7 @@ public class PresTest implements Model {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        DB.Conn.close();
         return prestests;
     }
 
@@ -86,6 +88,7 @@ public class PresTest implements Model {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        DB.Conn.close();
         return presTests;
     }
 
@@ -101,6 +104,7 @@ public class PresTest implements Model {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        DB.Conn.close();
         return presTests;
     }
 
@@ -116,6 +120,7 @@ public class PresTest implements Model {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        DB.Conn.close();
         return presTests;
     }
 
@@ -131,6 +136,7 @@ public class PresTest implements Model {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        DB.Conn.close();
         return presTests;
     }
 

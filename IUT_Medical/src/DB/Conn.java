@@ -6,9 +6,17 @@ public class Conn {
     public static String url = "jdbc:oracle:thin:@localhost:1521:xe"; // URL of the database
     public static String username = "dbms_lab_proj";
     public static String password = "dbms_lab_proj";
+    public static Connection conn;
+    public static Statement stmt;
+    public static ResultSet result;
 
-    public static Connection connect() throws SQLException {
-        return DriverManager.getConnection(url, username, password);
+
+    public static void connect() throws SQLException {
+        conn = DriverManager.getConnection(url, username, password);
+    }
+
+    public static void getSTMT() throws SQLException {
+        stmt = conn.createStatement();
     }
 
     public static void close(Connection conn) {
@@ -20,21 +28,29 @@ public class Conn {
     }
 
     public static ResultSet Exedute(String query) throws SQLException {
-        Connection conn = connect();
-        Statement stmt = conn.createStatement();
-        ResultSet result = stmt.executeQuery(query);
-//        stmt.close();
-//        conn.close();
+        connect();
+        getSTMT();
+        result = stmt.executeQuery(query);
         return result;
     }
 
     public static int Execute(String query) throws SQLException {
-        Connection conn = connect();
+        connect();
         Statement stmt = conn.createStatement();
         int rowsAffected = stmt.executeUpdate(query);
         stmt.close();
         conn.close();
         return rowsAffected;
+    }
+
+    public static void close(){
+        try {
+            result.close();
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 }

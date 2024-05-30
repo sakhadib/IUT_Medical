@@ -68,12 +68,13 @@ public class ReferralController extends Controller{
         System.out.println("Enter the number of Referrals to populate:");
         int count = sc.nextInt();
         List<Model.Model> Visits = Model.Visit.All();
-        List<Model.Model> Details = Model.Referral.All();
 
         Random rand = new Random();
 
         for (int i = 0; i < count; i++) {
-            Model.Referral referral = new Model.Referral(rand.nextInt(Visits.size()), "Random Details");
+            Model.Visit visit = (Model.Visit) Visits.get(rand.nextInt(Visits.size()));
+            String details = "Details for Visit ID: " + visit.ID;
+            Model.Referral referral = new Model.Referral(visit.ID, details);
             referral.save();
         }
         System.out.println("\n--- Referrals populated successfully ---\n");
