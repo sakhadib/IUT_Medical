@@ -1,5 +1,10 @@
 package Controller;
 
+
+
+
+import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class ReferralController extends Controller{
@@ -55,5 +60,18 @@ public class ReferralController extends Controller{
         referral.delete();
 
         System.out.println("--- Referral deleted successfully ---");
+    }
+
+
+    public void populate(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of Referrals to populate:");
+        int count = sc.nextInt();
+        List<Model.Model> Visits = Model.Visit.All();
+        List<Model.Model> Details = Model.Referral.All();
+
+        Random rand = new Random();
+
+
     }
 }

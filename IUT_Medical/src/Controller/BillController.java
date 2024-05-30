@@ -1,4 +1,7 @@
 package Controller;
+
+
+
 import java.util.Random;
 import java.util.Scanner;
 import java.util.List;
@@ -71,11 +74,16 @@ public class BillController extends Controller{
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of bills to populate:");
         int count = sc.nextInt();
+        List<Model.Model> Referrals = Model.Referral.All();
+
         Random rand = new Random();
 
         for (int i = 0; i < count; i++) {
-            Model.Bill bill = new Model.Bill(rand.nextInt(10), rand.nextInt(1000));
+
+            int amount = rand.nextInt(1000);
+            Model.Bill bill = new Model.Bill(rand.nextInt(Referrals.size()), amount);
             bill.save();
+
         }
         System.out.println("--- Bills populated successfully ---");
     }
