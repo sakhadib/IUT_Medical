@@ -69,7 +69,14 @@ public class Main {
                         controller = new PresTestController();
                         controller.create();
                     }
-
+                    else if(commands.equals("referral")){
+                        controller = new ReferralController();
+                        controller.create();
+                    }
+                    else if(commands.equals("bill")){
+                        controller = new BillController();
+                        controller.create();
+                    }
                     else if (commands.equals("back")) {
                         break;
                     }
@@ -350,11 +357,7 @@ public class Main {
                         pmc1.populate();
                     }
 
-                    else if (commands.equals("prescriptions")) {
-                        PresMedController pmc1 = new PresMedController();
-                        pmc1.populate();
-                    }
-                    else if (commands.equals("prescribed_tests")) {
+                    else if (commands.equals("prestests")) {
 
                         PresTestController ptc1 = new PresTestController();
                         ptc1.populate();

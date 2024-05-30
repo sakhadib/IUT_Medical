@@ -85,5 +85,7 @@ public class MedicineController extends Controller{
             Model.Medicine medicine = new Model.Medicine(name, generic, company, quantity);
             medicine.save();
         }
+
+        System.out.println("\n--- Medicines populated successfully ---\n");
     }
 }

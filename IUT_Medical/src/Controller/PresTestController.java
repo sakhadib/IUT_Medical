@@ -101,7 +101,7 @@ public class PresTestController extends Controller{
             pt.save();
         }
 
-        System.out.println("--- PrescriptionTests populated successfully ---");
+        System.out.println("\n--- PrescriptionTests populated successfully ---\n");
     }
 
 

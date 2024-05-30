@@ -85,5 +85,7 @@ public class VisitController extends Controller{
             Model.Visit visit = new Model.Visit(student.ID, doctor.ID);
             visit.save();
         }
+
+        System.out.println("\n--- Visits populated successfully ---\n");
     }
 }

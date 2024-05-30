@@ -93,6 +93,8 @@ public class StudentController extends Controller{
             Model.Student student = new Model.Student(name, email, dept);
             student.save();
         }
+
+        System.out.println("\n--- Students populated successfully ---\n");
     }
 
 }
